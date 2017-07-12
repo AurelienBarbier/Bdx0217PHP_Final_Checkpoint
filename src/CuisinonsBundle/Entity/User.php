@@ -56,6 +56,11 @@ class User implements UserInterface, \Serializable
      */
     private $isActive;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Recette", mappedBy="user")
+     */
+    private $recettes;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -197,5 +202,39 @@ class User implements UserInterface, \Serializable
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Add recette
+     *
+     * @param \CuisinonsBundle\Entity\Recette $recette
+     *
+     * @return User
+     */
+    public function addRecette(\CuisinonsBundle\Entity\Recette $recette)
+    {
+        $this->recettes[] = $recette;
+
+        return $this;
+    }
+
+    /**
+     * Remove recette
+     *
+     * @param \CuisinonsBundle\Entity\Recette $recette
+     */
+    public function removeRecette(\CuisinonsBundle\Entity\Recette $recette)
+    {
+        $this->recettes->removeElement($recette);
+    }
+
+    /**
+     * Get recettes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRecettes()
+    {
+        return $this->recettes;
     }
 }

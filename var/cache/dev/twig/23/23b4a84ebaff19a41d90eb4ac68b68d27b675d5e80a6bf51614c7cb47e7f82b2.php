@@ -7,28 +7,31 @@ class __TwigTemplate_bc28a0cc693ec37e6840405f9208da61b0febfdb931fe92befbe39ee91c
     {
         parent::__construct($env);
 
-        $this->parent = false;
-
+        // line 1
+        $this->parent = $this->loadTemplate("::base.html.twig", "CuisinonsBundle:Default:index.html.twig", 1);
         $this->blocks = array(
         );
     }
 
+    protected function doGetParent(array $context)
+    {
+        return "::base.html.twig";
+    }
+
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_591a4dbdc6116ae4e3d91173d9d09cf5c0f822e216338e78bcc680d434505333 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_591a4dbdc6116ae4e3d91173d9d09cf5c0f822e216338e78bcc680d434505333->enter($__internal_591a4dbdc6116ae4e3d91173d9d09cf5c0f822e216338e78bcc680d434505333_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CuisinonsBundle:Default:index.html.twig"));
+        $__internal_ff64ab2ec4d2e7f6f94a68e24c9172cb0e89f61f9ab1ea212e76438a8c4fa087 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_ff64ab2ec4d2e7f6f94a68e24c9172cb0e89f61f9ab1ea212e76438a8c4fa087->enter($__internal_ff64ab2ec4d2e7f6f94a68e24c9172cb0e89f61f9ab1ea212e76438a8c4fa087_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CuisinonsBundle:Default:index.html.twig"));
 
-        $__internal_b11e0afc486b658cea3129ff8016a0c411ec7d7e8973038ccedd19dbeb329099 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b11e0afc486b658cea3129ff8016a0c411ec7d7e8973038ccedd19dbeb329099->enter($__internal_b11e0afc486b658cea3129ff8016a0c411ec7d7e8973038ccedd19dbeb329099_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CuisinonsBundle:Default:index.html.twig"));
+        $__internal_dada219e6996485d098afb69090878fa15ed0fc25ecd5ce23b1215a9b91d82ca = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_dada219e6996485d098afb69090878fa15ed0fc25ecd5ce23b1215a9b91d82ca->enter($__internal_dada219e6996485d098afb69090878fa15ed0fc25ecd5ce23b1215a9b91d82ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CuisinonsBundle:Default:index.html.twig"));
 
-        // line 1
-        echo "test
-";
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_591a4dbdc6116ae4e3d91173d9d09cf5c0f822e216338e78bcc680d434505333->leave($__internal_591a4dbdc6116ae4e3d91173d9d09cf5c0f822e216338e78bcc680d434505333_prof);
+        $__internal_ff64ab2ec4d2e7f6f94a68e24c9172cb0e89f61f9ab1ea212e76438a8c4fa087->leave($__internal_ff64ab2ec4d2e7f6f94a68e24c9172cb0e89f61f9ab1ea212e76438a8c4fa087_prof);
 
         
-        $__internal_b11e0afc486b658cea3129ff8016a0c411ec7d7e8973038ccedd19dbeb329099->leave($__internal_b11e0afc486b658cea3129ff8016a0c411ec7d7e8973038ccedd19dbeb329099_prof);
+        $__internal_dada219e6996485d098afb69090878fa15ed0fc25ecd5ce23b1215a9b91d82ca->leave($__internal_dada219e6996485d098afb69090878fa15ed0fc25ecd5ce23b1215a9b91d82ca_prof);
 
     }
 
@@ -37,9 +40,14 @@ class __TwigTemplate_bc28a0cc693ec37e6840405f9208da61b0febfdb931fe92befbe39ee91c
         return "CuisinonsBundle:Default:index.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  25 => 1,);
+        return array (  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -52,7 +60,7 @@ class __TwigTemplate_bc28a0cc693ec37e6840405f9208da61b0febfdb931fe92befbe39ee91c
 
     public function getSourceContext()
     {
-        return new Twig_Source("test
+        return new Twig_Source("{% extends '::base.html.twig' %}
 ", "CuisinonsBundle:Default:index.html.twig", "/home/wilder/Documents/Wild-Code-School/www-dev/checkpoint/Bdx0217PHP_Final_Checkpoint/src/CuisinonsBundle/Resources/views/Default/index.html.twig");
     }
 }

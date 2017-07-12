@@ -2,3 +2,16 @@ services:
 #    cuisinons.example:
 #        class: CuisinonsBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    cuisinons.upload:
+        class: CuisinonsBundle\Service\FileUploader
+        arguments:
+            $targetDir: '%recette_directory%'
+
+    cuisinons.FileUploadListener:
+        class: WCS\BikeBundle\EventListener\RecetteUploadListener
+        arguments:
+            - '@cuisinons.upload'
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
