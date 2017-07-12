@@ -1,3 +1,6 @@
 marmi_wild_homepage:
     path:     /
     defaults: { _controller: MarmiWildBundle:Recipe:index }
+marmi_wild_form:
+    path:     /form
+    defaults: { _controller: MarmiWildBundle:Recipe:edit }

@@ -1,1 +1,38 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/form.css') }}">
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+    {% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+{% block header %}
+
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col s12">
+        <div class="logo" alt="logo">
+            <img class="responsive-img" id="logo" src="{{ asset("img/marmiwild_logo.png") }}"/>
+        </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+{% endblock %}
+</body>
+</html>

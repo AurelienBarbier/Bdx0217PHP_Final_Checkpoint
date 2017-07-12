@@ -52,7 +52,7 @@ class Recipe
     /**
      * @var string
      *
-     * @ORM\Column(name="ingredients", type="string", length=255)
+     * @ORM\Column(name="ingredients", type="string", length=99999)
      */
     private $ingredients;
 

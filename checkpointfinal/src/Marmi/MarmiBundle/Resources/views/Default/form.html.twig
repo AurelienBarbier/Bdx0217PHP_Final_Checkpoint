@@ -1,53 +1,84 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+{% extends '@MarmiMarmiBundle/index.html.twig' %}
 
-    {% block stylesheets %}
-    {% endblock %}
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-</head>
-<body>
 {% block body %}
+
+
 
     {{ form_start(form) }}
 
-    {{ form_label(form.name) }}
-    {{ form_widget(form.name) }}
-    {{ form_errors(form.name) }}
+    <div class="row">
+        <div class="input-field col s8 offset-s4">
 
-    {{ form_label(form.time) }}
-    {{ form_widget(form.time) }}
-    {{ form_errors(form.time) }}
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+            {{ form_errors(form.name) }}
 
-    {{ form_label(form.level) }}
-    {{ form_widget(form.level) }}
-    {{ form_errors(form.level) }}
+        </div>
+    </div>
 
-    {{ form_label(form.nbPerson) }}
-    {{ form_widget(form.nbPerson) }}
-    {{ form_errors(form.nbPerson) }}
+    <div class="row">
+        <div class="input-field col s8 offset-s4">
 
-    {{ form_label(form.ingredients) }}
-    {{ form_widget(form.ingredients) }}
-    {{ form_errors(form.ingredients) }}
+            {{ form_label(form.time) }}
+            {{ form_widget(form.time) }}
+            {{ form_errors(form.time) }}
 
-    {{ form_label(form.prepare) }}
-    {{ form_widget(form.prepare) }}
-    {{ form_errors(form.prepare) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s8 offset-s4">
+
+            {{ form_label(form.level) }}
+            {{ form_widget(form.level) }}
+            {{ form_errors(form.level) }}
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s8 offset-s4">
+
+            {{ form_label(form.nbPerson) }}
+            {{ form_widget(form.nbPerson) }}
+            {{ form_errors(form.nbPerson) }}
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s8 offset-s4">
+
+            {{ form_label(form.ingredients) }}
+            {{ form_widget(form.ingredients) }}
+            {{ form_errors(form.ingredients) }}
+        </div>
+    </div>
 
 
+    <div class="row">
+        <div class="input-field col s8 offset-s4">
 
-    {{ form_row(form.submit) }}
+            {{ form_label(form.prepare) }}
+            {{ form_widget(form.prepare) }}
+            {{ form_errors(form.prepare) }}
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s8 offset-s4">
+
+            {{ form_row(form.submit) }}
+        </div>
+    </div>
+
 
     {{ form_end(form) }}
 
+
 {% endblock %}
 
-{% block javascripts %}
-{% endblock %}
-</body>
-</html>
+
 
