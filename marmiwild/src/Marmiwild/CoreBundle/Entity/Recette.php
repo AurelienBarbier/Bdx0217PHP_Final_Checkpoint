@@ -31,9 +31,9 @@ class Recette
     /**
      * @var string
      *
-     * @ORM\Column(name="cat�egorie", type="string", length=25, nullable=true)
+     * @ORM\Column(name="categorie", type="string", length=25, nullable=true)
      */
-    private $cat�egorie;
+    private $categorie;
 
     /**
      * @var int
@@ -124,27 +124,27 @@ class Recette
     }
 
     /**
-     * Set cat�egorie
+     * Set categorie
      *
-     * @param string $cat�egorie
+     * @param string $categorie
      *
      * @return Recette
      */
-    public function setCat�egorie($cat�egorie)
+    public function setCategorie($categorie)
     {
-        $this->cat�egorie = $cat�egorie;
+        $this->categorie = $categorie;
 
         return $this;
     }
 
     /**
-     * Get cat�egorie
+     * Get categorie
      *
      * @return string
      */
-    public function getCat�egorie()
+    public function getCategorie()
     {
-        return $this->cat�egorie;
+        return $this->categorie;
     }
 
     /**
@@ -355,4 +355,5 @@ class Recette
     {
         return $this->recettesIngredients;
     }
+
 }
