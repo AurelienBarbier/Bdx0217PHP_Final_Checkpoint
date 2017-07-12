@@ -249,3 +249,7 @@ e12faf,127.0.0.1,GET,http://localhost:8000/mes-recettes,1499868651,,200
 0fb7d7,127.0.0.1,GET,http://localhost:8000/mes-recettes,1499868675,,200
 d565d9,127.0.0.1,GET,http://localhost:8000/suppression-recette/4,1499868677,,302
 dfce34,127.0.0.1,GET,http://localhost:8000/mes-recettes,1499868677,,200
+81fdd1,127.0.0.1,GET,http://localhost:8000/mes-recettes,1499868965,,200
+280288,127.0.0.1,GET,http://localhost:8000/nouvelle-recette,1499868972,,200
+0c295b,127.0.0.1,GET,http://localhost:8000/nouvelle-recette,1499869037,,200
+48c633,127.0.0.1,GET,http://localhost:8000/nouvelle-recette,1499869125,,200

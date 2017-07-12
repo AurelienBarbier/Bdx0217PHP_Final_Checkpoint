@@ -3,6 +3,7 @@
 namespace CuisinonsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Recette
@@ -26,6 +27,9 @@ class Recette
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\type("string")
+     *
      */
     private $nom;
 
@@ -40,6 +44,7 @@ class Recette
      * @var string
      *
      * @ORM\Column(name="image", type="text", nullable=true)
+     * @Assert\type("string")
      */
     private $image;
 
@@ -47,6 +52,8 @@ class Recette
      * @var \DateTime
      *
      * @ORM\Column(name="temps", type="time")
+     * @Assert\NotBlank()
+     * @Assert\Time()
      */
     private $temps;
 
@@ -54,6 +61,11 @@ class Recette
      * @var int
      *
      * @ORM\Column(name="difficulte", type="integer")
+     * @Assert\NotBlank()
+     * @Assert\type("integer")
+     * @Assert\Range(
+     *      min = 1,
+     *      max = 5)
      */
     private $difficulte;
 

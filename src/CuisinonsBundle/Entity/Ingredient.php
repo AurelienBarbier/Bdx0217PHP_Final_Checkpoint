@@ -3,12 +3,14 @@
 namespace CuisinonsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Ingredient
  *
  * @ORM\Table(name="ingredient")
  * @ORM\Entity(repositoryClass="CuisinonsBundle\Repository\IngredientRepository")
+ *
  */
 class Ingredient
 {
@@ -25,6 +27,8 @@ class Ingredient
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\type("string")
      */
     private $nom;
 
@@ -32,6 +36,10 @@ class Ingredient
      * @var int
      *
      * @ORM\Column(name="quantite", type="integer")
+     * @Assert\NotBlank()
+     * @Assert\type("integer")
+     * @Assert\GreaterThan(0)
+     *
      */
     private $quantite;
 

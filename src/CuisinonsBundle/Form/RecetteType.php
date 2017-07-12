@@ -30,6 +30,7 @@ class RecetteType extends AbstractType
             ->add('temps', TimeType::class, array('label' => 'Temps'))
             ->add('difficulte', IntegerType::class, array('label' => 'Difficulté'))
             ->add('ingredients', CollectionType::class, array(
+                'label' => ' ',
                 'entry_type'   => IngredientType::class,
                 'allow_add'    => true,
                 'allow_delete' => true,

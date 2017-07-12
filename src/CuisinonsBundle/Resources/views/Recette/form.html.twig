@@ -14,7 +14,9 @@
             <li>{{ form_row(ingredient.nom) }} {{ form_row(ingredient.quantite) }}</li>
         {% endfor %}
     </ul>
-
+    <div class="text-right">
+        {{ form_row(form.submit, {'attr' : {'class' : 'btn-primary btn-lg'}}) }}
+    </div>
     {{ form_end(form) }}
 {% endblock %}
 
