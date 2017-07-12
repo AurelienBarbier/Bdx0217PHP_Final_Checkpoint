@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>MarmiWild by Stephane R.</title>
+
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="{{ asset('js/accueil.js') }}"></script>
+    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/accueil.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/navbar.js') }}"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container-fluid" id="header">
+    <div class="page-header" class="img-responsive" id="main-logo">
+        <img src="{{ asset('img/Logo.png') }}" class="img-responsive">
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span id="search_concept">Filter by</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#contains">Contains</a></li>
+                        <li><a href="#its_equal">Do not Contains</a></li>
+                        <li><a href="#greather_than">For 4 or more people ></a></li>
+                        <li><a href="#less_than">For One person < </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#all">Anything</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">
+                <input type="text" class="form-control" name="x" placeholder="Recipes terms...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default" role="navigation" id="nav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img alt="" src="">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Add Recipe</li>
+                <li><a href="#">List Recipes</li>
+                <li><a href="#">Show Recipe of the Day</li>
+                <li><a href="#">Show Randoms Recipes</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="" alt="forest" class="img-responsive">
+            </div>
+            <div class="item">
+                <img src="" alt="meow" class="img-responsive">
+            </div>
+            <div class="item">
+                <img src="" alt="meowwww!" class="img-responsive">
+            </div>
+        </div>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </div>
+</div>
+
+<div id="first-section" class="jumbotron">
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="{{ asset('img/recettes/crepes.jpg') }}" class="img-responsive">
+        </div>
+        <div class="col-sm-4">
+            <img src="{{ asset('img/recettes/nems.jpg') }}" class="img-responsive">
+        </div>
+        <div class="col-sm-4">
+            <img src="{{ asset('img/recettes/tarte_linz.jpg') }}" class="img-responsive">
+        </div>
+    </div>
+</div>
+
+
+
+<div id="second-section" class="jumbotron">
+    <div class="container">
+        <br >
+        <p class="text-center">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit, neque eget faucibus bibendum, ligula diam gravida risus, sed faucibus felis velit gravida tellus. Phasellus vitae tempor ante, in eleifend eros. Morbi eu felis placerat, convallis orci vitae, rutrum nulla. Integer sed est euismod, tristique diam tincidunt, faucibus ex. Aliquam dui odio, fringilla sit amet nulla eget, vehicula semper ante. Suspendisse commodo felis orci, non ullamcorper ex faucibus ut. Fusce tempus scelerisque justo, pharetra efficitur risus porttitor quis. Vestibulum et tellus ligula.
+
+            Sed molestie iaculis massa, nec ornare justo vehicula ac. Aliquam laoreet nisl volutpat sem sodales vehicula. Donec et porta sem. Vivamus aliquam facilisis ipsum sit amet rutrum. Aliquam lobortis interdum auctor. Aliquam ut vulputate dui. Integer eu blandit erat. Etiam quam ligula, porttitor in porta sit amet, sodales quis magna. Mauris non gravida arcu, id imperdiet metus. Mauris eu viverra justo, quis pretium turpis.
+
+            Mauris laoreet ante et elementum mollis. Nunc tempor nisi id facilisis porttitor. Integer ante metus, ullamcorper at egestas a, vehicula in ligula. Donec sed lacus est. Aenean blandit tincidunt dolor nec lacinia. Praesent finibus turpis ultrices, semper libero at, semper sapien. Morbi molestie ex congue risus porttitor, nec feugiat orci pulvinar.
+
+        </p>
+    </div>
+</div>
+
+<section class="module parallax parallax-1">
+    <div class="container">
+        <h1>Services</h1>
+    </div>
+</section>
+
+<section class="module content">
+    <div class="container">
+        <h2>Lorem Ipsum Dolor</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin hendrerit vitae purus quis imperdiet. Aenean elementum porta erat, at posuere est elementum non. Sed ut lorem eu ante ornare tristique quis eu odio. Proin nibh ligula, semper eget mauris nec, egestas mattis libero. Vestibulum auctor tellus vel augue rutrum lacinia. Nunc nec felis velit. Nulla augue magna, vehicula in convallis sed, pretium nec odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis a mauris vestibulum, ornare elit ac, consectetur sem. Pellentesque sem neque, ultricies nec lobortis eget, pellentesque nec lorem. Phasellus feugiat varius nisl, vel efficitur eros ultrices et. Sed sollicitudin, massa sit amet finibus eleifend, leo magna rhoncus sem, suscipit lacinia nulla mauris nec nibh. Aliquam ut massa id justo ullamcorper dictum vel rhoncus urna.
+
+        </p>
+    </div>
+</section>
+</div>
+
+
+<section class="module parallax parallax-2">
+    <div class="container" class="img-responsive">
+        <h1>Gardens</h1>
+    </div>
+</section>
+
+<div class="container" id="gallery-container">
+    <div class="row" id="gallery-row">
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+            <img src="{{ asset('img/recettes/barquette.jpg') }}">
+        </div>
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+            <img src="{{ asset('img/recettes/brochettes.jpg') }}">
+        </div>
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+            <img src="{{ asset('img/recettes/carpaccio.jpg') }}">
+        </div>
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4" >
+            <img src="{{ asset('img/recettes/choco.jpg') }}">
+        </div>
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+            <img src="{{ asset('img/recettes/cone_pizza.jpg') }}">
+        </div>
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+            <img src="{{ asset('img/recettes/croque_monsieur.jpg') }}">
+        </div>
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+            <img src="{{ asset('img/recettes/gateau_flammand.jpg') }}">
+        </div>
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+            <img src="{{ asset('img/recettes/sauce_armoricaine.jpg') }}">
+        </div>
+        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+            <img src="{{ asset('img/recettes/tiramisu.jpg') }}">
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="content">
+</div>
+<footer id="myFooter">
+    <div class="container">
+        <p class="footer-copyright">© 2017 Copyright Text</p>
+    </div>
+    <div class="footer-social">
+        <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.js') }}"></script>
+</body>
+</html>
