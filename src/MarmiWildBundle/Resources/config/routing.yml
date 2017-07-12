@@ -1,0 +1,19 @@
+marmi_wild_homepage:
+    path:     /
+    defaults: { _controller: MarmiWildBundle:Default:index }
+
+marmi_wild_add:
+    path:     /add
+    defaults: { _controller: MarmiWildBundle:Default:addRecipe}
+
+marmi_wild_edit:
+    path:     /edit/{id}
+    defaults: { _controller: MarmiWildBundle:Default:edit}
+    requirements:
+        id: \d+
+
+marmi_wild_delete:
+    path:     /delete/{id}
+    defaults: { _controller: MarmiWildBundle:Default:delete}
+    requirements:
+        id: \d+

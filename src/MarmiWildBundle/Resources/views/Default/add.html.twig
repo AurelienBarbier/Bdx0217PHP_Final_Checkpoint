@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col s8 m12 offset-s2 offset-m1">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name) }}
+                </div>
+                <div class="col s12 m4">
+                    <div class="input-field inline">
+                        {{ form_label(form.time) }}
+                        {{ form_widget(form.time) }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m8" id="text">
+                    {{ form_label(form.ingredients) }}
+                    {{ form_widget(form.ingredients) }}
+                </div>
+                <div class="input-field col s12 m4" id="text">
+                    {{ form_label(form.quantity) }}
+                    {{ form_widget(form.quantity) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m10" id="text">
+                    {{ form_label(form.steps) }}
+                    {{ form_widget(form.steps) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m4 offset-m6">
+                    <button class="btn waves-effect waves-light right" id="submit" type="submit" name="submit">Envoyer
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock body %}
