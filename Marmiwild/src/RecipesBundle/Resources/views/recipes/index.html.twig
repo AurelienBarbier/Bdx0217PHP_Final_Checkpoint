@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="container">
     <h1>Recipes list</h1>
 
     <table>
@@ -56,4 +57,5 @@
             <a href="{{ path('recipes_new') }}">Create a new entry</a>
         </li>
     </ul>
+    </div>
 {% endblock %}

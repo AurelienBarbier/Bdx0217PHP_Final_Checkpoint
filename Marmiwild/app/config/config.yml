@@ -39,7 +39,12 @@ twig:
     strict_variables: "%kernel.debug%"
     form_themes: ['bootstrap_3_layout.html.twig']
 
-
+vich_uploader:
+    db_driver: orm
+    mappings:
+            recipe_image:
+                uri_prefix:         /images/recipes
+                upload_destination: '%kernel.root_dir%/../web/images/recipes'
 # Doctrine Configuration
 doctrine:
     dbal:
