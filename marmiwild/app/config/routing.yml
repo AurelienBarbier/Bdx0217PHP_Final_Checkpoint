@@ -1,0 +1,4 @@
+marmiwild_core:
+    resource: "@MarmiwildCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+

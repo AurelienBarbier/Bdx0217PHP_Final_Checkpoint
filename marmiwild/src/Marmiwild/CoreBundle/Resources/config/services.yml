@@ -1,0 +1,4 @@
+services:
+#    marmiwild_core.example:
+#        class: Marmiwild\CoreBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
