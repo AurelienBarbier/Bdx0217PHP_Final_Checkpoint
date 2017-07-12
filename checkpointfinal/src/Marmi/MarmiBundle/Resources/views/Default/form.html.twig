@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+    {% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+{% block body %}
+
+    {{ form_start(form) }}
+
+    {{ form_label(form.name) }}
+    {{ form_widget(form.name) }}
+    {{ form_errors(form.name) }}
+
+    {{ form_label(form.time) }}
+    {{ form_widget(form.time) }}
+    {{ form_errors(form.time) }}
+
+    {{ form_label(form.level) }}
+    {{ form_widget(form.level) }}
+    {{ form_errors(form.level) }}
+
+    {{ form_label(form.nbPerson) }}
+    {{ form_widget(form.nbPerson) }}
+    {{ form_errors(form.nbPerson) }}
+
+    {{ form_label(form.ingredients) }}
+    {{ form_widget(form.ingredients) }}
+    {{ form_errors(form.ingredients) }}
+
+    {{ form_label(form.prepare) }}
+    {{ form_widget(form.prepare) }}
+    {{ form_errors(form.prepare) }}
+
+
+
+    {{ form_row(form.submit) }}
+
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+</body>
+</html>
+

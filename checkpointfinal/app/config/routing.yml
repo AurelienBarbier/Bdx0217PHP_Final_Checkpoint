@@ -1,3 +1,11 @@
+marmi_wild_recipe:
+    resource: "@MarmiWildBundle/Controller/RecipeController.php"
+    type:     annotation
+
+marmi_wild:
+    resource: "@MarmiWildBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
