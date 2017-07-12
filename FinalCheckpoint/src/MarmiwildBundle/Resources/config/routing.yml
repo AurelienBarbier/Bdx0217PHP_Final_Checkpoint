@@ -1,3 +1,7 @@
 marmiwild_homepage:
     path:     /
     defaults: { _controller: MarmiwildBundle:Default:index }
+
+marmiwild_addRecette:
+    path:     /add
+    defaults: { _controller: MarmiwildBundle:Default:addRecette }

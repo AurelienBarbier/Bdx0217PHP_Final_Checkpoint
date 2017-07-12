@@ -1,3 +1,15 @@
+marmiwild_recette_ingredient:
+    resource: "@MarmiwildBundle/Controller/recetteIngredientController.php"
+    type:     annotation
+
+marmiwild_ingredient:
+    resource: "@MarmiwildBundle/Controller/IngredientController.php"
+    type:     annotation
+
+marmiwild_recette:
+    resource: "@MarmiwildBundle/Controller/RecetteController.php"
+    type:     annotation
+
 marmiwild:
     resource: "@MarmiwildBundle/Resources/config/routing.yml"
     prefix:   /

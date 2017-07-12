@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Recetteingredients list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Quantite</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recetteIngredient in recetteIngredients %}
+            <tr>
+                <td><a href="{{ path('recetteingredient_show', { 'id': recetteIngredient.id }) }}">{{ recetteIngredient.id }}</a></td>
+                <td>{{ recetteIngredient.quantite }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('recetteingredient_show', { 'id': recetteIngredient.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('recetteingredient_edit', { 'id': recetteIngredient.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('recetteingredient_new') }}">Create a new recetteIngredient</a>
+        </li>
+    </ul>
+{% endblock %}

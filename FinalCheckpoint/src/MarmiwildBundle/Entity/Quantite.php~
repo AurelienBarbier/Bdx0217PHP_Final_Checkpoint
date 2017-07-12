@@ -1,0 +1,94 @@
+<?php
+
+namespace MarmiwildBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+
+/**
+ * Quantite
+ *
+ * @ORM\Table(name="quantite")
+ * @ORM\Entity(repositoryClass="MarmiwildBundle\Repository\QuantiteRepository")
+ */
+class Quantite
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="quantite", type="integer")
+     */
+    private $quantite;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ingredient", mappedBy="quantite")
+     */
+    private $ingredients;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set quantite
+     *
+     * @param integer $quantite
+     *
+     * @return Quantite
+     */
+    public function setQuantite($quantite)
+    {
+        $this->quantite = $quantite;
+
+        return $this;
+    }
+
+    /**
+     * Get quantite
+     *
+     * @return int
+     */
+    public function getQuantite()
+    {
+        return $this->quantite;
+    }
+
+    /**
+     * Set ingredient
+     *
+     * @param \MarmiwildBundle\Entity\Ingredient $ingredient
+     *
+     * @return Quantite
+     */
+    public function setIngredient(\MarmiwildBundle\Entity\Ingredient $ingredient = null)
+    {
+        $this->ingredient = $ingredient;
+
+        return $this;
+    }
+
+    /**
+     * Get ingredient
+     *
+     * @return \MarmiwildBundle\Entity\Ingredient
+     */
+    public function getIngredient()
+    {
+        return $this->ingredient;
+    }
+}

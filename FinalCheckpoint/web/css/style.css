@@ -1,0 +1,70 @@
+nav {
+    background-color: white;
+    height: 100px;
+}
+
+nav img {
+    width:50%;
+    margin-left: 94%;
+    margin-top: 1%;
+}
+
+.nav-content {
+    text-align: center;
+}
+
+.nav-content .tab {
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.nav-content a {
+    text-decoration: none;
+}
+
+.nav-content a:hover {
+    text-decoration: underline;
+}
+
+#background {
+    margin-top: 30px;
+    width: 100%;
+    height: 400px;
+    background-image: url("/images/background.jpg");
+    text-align: center;
+}
+
+#background input {
+    width: 600px;
+    height: 50px;
+    background-color: white;
+    margin-top: 150px;
+    border-radius: 20px;
+}
+
+a i {
+    background-color: darkorange;
+}
+
+h1 {
+    color: darkorange;
+    text-align: center;
+}
+
+#marmiwildbundle_recette {
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 250px;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+form .subbtn {
+    margin-right: 50px;
+    color: white;
+    background-color: darkorange;
+}
+

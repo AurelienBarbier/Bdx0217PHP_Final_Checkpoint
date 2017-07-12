@@ -5,8 +5,17 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block style %}
+        <link href="{{ asset('materialize/css/materialize.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {% endblock %}
+        {% block js %}
+            <script src="{{ asset('materialize/js/materialize.js') }}" type="text/javascript" rel="script"></script>
+        {% endblock %}
     </head>
     <body>
+        {% block nav %}{% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
