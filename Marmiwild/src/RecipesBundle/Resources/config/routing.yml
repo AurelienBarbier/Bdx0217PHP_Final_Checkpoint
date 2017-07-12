@@ -1,9 +1,5 @@
-marmiwild_homepage:
-    path:     /
-    defaults: { _controller: RecipesBundle:Default:index }
-
 recipes_index:
-    path:     /recipes
+    path:     /
     defaults: { _controller: "RecipesBundle:Recipes:index" }
     methods:  GET
 

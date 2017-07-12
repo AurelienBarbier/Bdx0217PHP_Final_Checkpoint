@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
-
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class RecipesType extends AbstractType
 {
@@ -34,8 +34,9 @@ class RecipesType extends AbstractType
                 'download_label' => '...',
                 'download_uri' => true,
                 'image_uri' => true,
-            ]);
-        ;
+            ])
+            ->add('ajouter', SubmitType::class);
+
     }
     
     /**
