@@ -9,7 +9,7 @@ services:
             $targetDir: '%recette_directory%'
 
     cuisinons.FileUploadListener:
-        class: WCS\BikeBundle\EventListener\RecetteUploadListener
+        class: CuisinonsBundle\EventListener\RecetteUploadListener
         arguments:
             - '@cuisinons.upload'
         tags:

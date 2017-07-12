@@ -39,6 +39,8 @@ class appDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'cuisinons_homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'CuisinonsBundle\\Controller\\DefaultController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'cuisinons_login' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'CuisinonsBundle\\Controller\\DefaultController::loginAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/login',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'cuisinons_logout' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'CuisinonsBundle\\Controller\\DefaultController::loginAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/logout',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'cuisinons_recette_list' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'CuisinonsBundle\\Controller\\RecetteController::listAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/mes-recettes',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'cuisinons_recette_add' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'CuisinonsBundle\\Controller\\RecetteController::addAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/nouvelle-recette',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
         }
     }

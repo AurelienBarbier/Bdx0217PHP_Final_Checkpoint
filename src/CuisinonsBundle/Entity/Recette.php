@@ -62,6 +62,11 @@ class Recette
     private $user;
 
     /**
+     * @ORM\OneToMany(targetEntity="Ingredient", mappedBy="recette", cascade={"persist"})
+     */
+    private $ingredients;
+
+    /**
      * Get id
      *
      * @return int
@@ -189,5 +194,71 @@ class Recette
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Recette
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ingredients = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add ingredient
+     *
+     * @param \CuisinonsBundle\Entity\Ingredient $ingredient
+     *
+     * @return Recette
+     */
+    public function addIngredient(\CuisinonsBundle\Entity\Ingredient $ingredient)
+    {
+        $this->ingredients[] = $ingredient;
+        $ingredient->setRecette($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove ingredient
+     *
+     * @param \CuisinonsBundle\Entity\Ingredient $ingredient
+     */
+    public function removeIngredient(\CuisinonsBundle\Entity\Ingredient $ingredient)
+    {
+        $this->ingredients->removeElement($ingredient);
+    }
+
+    /**
+     * Get ingredients
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIngredients()
+    {
+        return $this->ingredients;
     }
 }

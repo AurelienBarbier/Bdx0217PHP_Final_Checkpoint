@@ -9,3 +9,11 @@ cuisinons_login:
 cuisinons_logout:
     path:     /logout
     defaults: { _controller: CuisinonsBundle:Default:login }
+
+cuisinons_recette_list:
+    path:    /mes-recettes
+    defaults: { _controller: CuisinonsBundle:Recette:list }
+
+cuisinons_recette_add:
+    path:    /nouvelle-recette
+    defaults: { _controller: CuisinonsBundle:Recette:add }

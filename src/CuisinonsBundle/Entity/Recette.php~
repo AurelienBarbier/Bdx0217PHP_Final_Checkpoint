@@ -36,6 +36,13 @@ class Recette
     private $description;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="text", nullable=true)
+     */
+    private $image;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="temps", type="time")
@@ -53,6 +60,11 @@ class Recette
      * @ORM\ManyToOne(targetEntity="User", inversedBy="recettes")
      */
     private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ingredient", mappedBy="recette")
+     */
+    private $ingredients;
 
     /**
      * Get id
@@ -159,5 +171,52 @@ class Recette
     {
         return $this->difficulte;
     }
-}
 
+    /**
+     * Set user
+     *
+     * @param \CuisinonsBundle\Entity\User $user
+     *
+     * @return Recette
+     */
+    public function setUser(\CuisinonsBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \CuisinonsBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Recette
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+}

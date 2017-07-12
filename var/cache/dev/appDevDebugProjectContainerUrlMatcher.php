@@ -132,6 +132,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'CuisinonsBundle\\Controller\\DefaultController::loginAction',  '_route' => 'cuisinons_logout',);
         }
 
+        // cuisinons_recette_list
+        if ('/mes-recettes' === $pathinfo) {
+            return array (  '_controller' => 'CuisinonsBundle\\Controller\\RecetteController::listAction',  '_route' => 'cuisinons_recette_list',);
+        }
+
+        // cuisinons_recette_add
+        if ('/nouvelle-recette' === $pathinfo) {
+            return array (  '_controller' => 'CuisinonsBundle\\Controller\\RecetteController::addAction',  '_route' => 'cuisinons_recette_add',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

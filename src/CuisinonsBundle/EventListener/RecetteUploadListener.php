@@ -45,7 +45,7 @@ class RecetteUploadListener
             return;
         }
 
-        $file = $entity->getBrochure();
+        $file = $entity->getImage();
 
         // only upload new files
         if (!$file instanceof UploadedFile) {

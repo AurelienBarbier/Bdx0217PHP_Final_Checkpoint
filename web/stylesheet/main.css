@@ -3,6 +3,11 @@
     padding-top: 10px;
 }
 
+.navbar-brand img
+{
+    margin-left: 15px;
+}
+
 .navbar-default
 {
     background-color: white;
@@ -14,7 +19,14 @@
     margin-top: 20px;
 }
 
-.carousel-inner
+#imageAccueil
 {
-    max-height: 500px;
+    background-image: url("../images/caroussel/plat1.jpg");
+    background-size: cover;
+    height: 500px;
+}
+
+#body
+{
+    margin-top: 20px;
 }
