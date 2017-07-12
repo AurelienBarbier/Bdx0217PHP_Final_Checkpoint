@@ -66,6 +66,22 @@ class RecetteController extends Controller
     }
 
     /**
+     * Finds and displays all recettes entity.
+     *
+     */
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $recettes = $em->getRepository(Recette::class)
+            ->findAll();
+
+        return $this->render('recette/list.html.twig', array(
+            'recettes' => $recettes,
+        ));
+    }
+
+
+    /**
      * Displays a form to edit an existing recette entity.
      *
      */

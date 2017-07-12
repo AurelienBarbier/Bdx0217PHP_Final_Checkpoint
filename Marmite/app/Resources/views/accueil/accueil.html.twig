@@ -55,6 +55,7 @@
     </div>
 {% endblock %}
 {% block menu %}
+    </div>
     <nav class="navbar navbar-default" role="navigation" id="nav">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -71,14 +72,16 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Add Recipe</li>
-                    <li><a href="#">List Recipes</li>
+                    <li><a href="{{ path('recette_new') }}">Add Recipe</li>
+                    <li><a href="{{ path('ingredient_new') }}">Add Ingredient</li>
+                    <li><a href="{{ path('recette_list') }}">List Recipes</li>
+                    <li><a href="{{ path('ingredient_list') }}">List Ingredients</li>
                     <li><a href="#">Show Recipe of the Day</li>
                     <li><a href="#">Show Randoms Recipes</li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav></div>
 {% endblock %}
 
 <div class="container-fluid">

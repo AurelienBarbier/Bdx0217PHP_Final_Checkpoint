@@ -4,12 +4,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 ">
-                <h1>Ingredient N° {{ ingredient.id }} </h1>
+                <h1>ALL RECIPES</h1>
             </div>
         </div>
     </div>
+
 {% endblock %}
 {% block encart %}
+    {% for recette in recettes %}
     <head>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
@@ -20,44 +22,51 @@
                     <div class="panel-heading" id="head">
                         <div class="panel-title" id="title">
                             <i class="fa fa-heart fa-2x"></i>
-                            <span class="hidden-xs">{{ ingredient.name }}</span>
-                            <span class="visible-xs">{{ ingredient.id }}</span>
+                            <span class="hidden-xs">{{ recette.name }}</span>
+                            <span class="visible-xs">{{ recette.id }}</span>
                         </div>
                     </div>
                     <div class="panel-body">
                         <div class="col-md-6 col-md-offset-9">
-                            <a href="{{ path('ingredient_edit', { 'id': ingredient.id }) }}">Edit this ingredient ?</a>
+                        <a href="{{ path('recette_edit', { 'id': recette.id }) }}">Edit this recipe ?</a>
                         </div>
+                        <img src="http://2.bp.blogspot.com/-jJ_26UAIJsI/T3SaNVg7l5I/AAAAAAAADdo/a7LQr38En4k/s1600/16.PNG" class="coupon-img img-rounded">
+
                         <div class="col-md-9">
                             <ul class="items">
-                                Gout : {{ ingredient.flavor }}
+                                {% for ingredient in recette %}
+                                <li>{{ recette.ingredient }}</li>
+                                    {% endfor %}
                             </ul>
-                            <p>{{ ingredient.description }}</p>
+                            <p>{{ recette.description }}</p>
                         </div>
                         <div class="col-md-3">
                             <div class="offer text-info">
-                                <span class="usd"><sup></sup></span>
-                                <span class="number"></span>
-                                <span class="cents"><sup></sup></span>
+                                <span class="usd"><sup>$</sup></span>
+                                <span class="number">{{ recette.price }}</span>
+                                <span class="cents"><sup>00</sup></span>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p class="disclosure"></p>
+                            <p class="disclosure">Publicated by : {{ recette.createur }}</p>
                         </div>
-                        <span class="print">
-                        <a href="#" class="btn btn-link"><i class="fa fa-lg fa-print"></i> Print this Ingredient</a>
-                    </span>
                     </div>
                     <div class="panel-footer">
                         <div class="coupon-code">
+                            Difficulty : {{ recette.difficulty }} / 5
                             <div class="col-md-6">
-
+                            <span class="print">
+                        <a href="#" class="btn btn-link"><i class="fa fa-lg fa-print"></i> Print Recipe</a>
+                    </span>
                             </div>
                         </div>
-                        <div class="exp"></div>
+                        <div class="exp">Cooking time : {{ recette.cookingtime }}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% endfor %}
+
+
 {% endblock %}

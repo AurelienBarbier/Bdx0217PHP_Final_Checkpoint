@@ -6,15 +6,14 @@ accueil:
     path:    /accueil
     defaults: { _controller: "AppBundle:Default:showIndex" }
 
-recette_index:
-    path:     /recette
-    defaults: { _controller: "AppBundle:Recette:index" }
-    methods:  GET
-
 recette_show:
     path:     /recette/{id}/show
     defaults: { _controller: "AppBundle:Recette:show" }
     methods:  GET
+
+recette_list:
+    path:     /recettes/list
+    defaults: { _controller: "AppBundle:Recette:list" }
 
 recette_new:
     path:     /recette/new
@@ -31,15 +30,14 @@ recette_delete:
     defaults: { _controller: "AppBundle:Recette:delete" }
     methods:  DELETE
 
-ingredient_index:
-    path:     /ingredient
-    defaults: { _controller: "AppBundle:Ingredient:index" }
-    methods:  GET
-
 ingredient_show:
     path:     /ingredient/{id}/show
     defaults: { _controller: "AppBundle:Ingredient:show" }
     methods:  GET
+
+ingredient_list:
+    path:     /ingredients/list
+    defaults: { _controller: "AppBundle:Ingredient:list" }
 
 ingredient_new:
     path:     /ingredient/new

@@ -29,6 +29,27 @@ class Ingredient
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="picture", type="string", length=255, nullable=true)
+     */
+    private $picture;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="flavor", type="string", length=255, nullable=true)
+     */
+    private $flavor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     */
+    private $description;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Recette", mappedBy="ingredients", cascade={"persist"})
      */
     private $recette;
@@ -66,6 +87,55 @@ class Ingredient
     {
         return $this->name;
     }
+
+    /**
+     * Set picture
+     *
+     * @param string $picture
+     *
+     * @return Ingredient
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Set flavor
+     *
+     * @param string $flavor
+     *
+     * @return Ingredient
+     */
+    public function setFlavor($flavor)
+    {
+        $this->flavor = $flavor;
+
+        return $this;
+    }
+
+    /**
+     * Get flavor
+     *
+     * @return string
+     */
+    public function getFlavor()
+    {
+        return $this->flavor;
+    }
+
     /**
      * Constructor
      */
@@ -111,5 +181,29 @@ class Ingredient
     public function __toString()
     {
         return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Ingredient
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

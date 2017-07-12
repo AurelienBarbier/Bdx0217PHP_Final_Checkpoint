@@ -66,13 +66,28 @@ class IngredientController extends Controller
     }
 
     /**
+     * Finds and displays all ingredients entity.
+     *
+     */
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $ingredients = $em->getRepository(Ingredient::class)
+            ->findAll();
+
+        return $this->render('ingredient/list.html.twig', array(
+            'ingredients' => $ingredients,
+        ));
+    }
+
+    /**
      * Displays a form to edit an existing ingredient entity.
      *
      */
     public function editAction(Request $request, Ingredient $ingredient)
     {
         $deleteForm = $this->createDeleteForm($ingredient);
-        $editForm = $this->createForm('AppBundle\Form\IngredientType', $ingredient);
+        $editForm = $this->createForm('AppBundle\Form\IngredientType');
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

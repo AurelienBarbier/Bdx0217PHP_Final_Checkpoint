@@ -4,12 +4,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 ">
-                <h1>Ingredient N° {{ ingredient.id }} </h1>
+                <h1>ALL RECIPES</h1>
             </div>
         </div>
     </div>
+
 {% endblock %}
 {% block encart %}
+    {% for ingredient in ingredients %}
     <head>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
@@ -26,7 +28,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="col-md-6 col-md-offset-9">
-                            <a href="{{ path('ingredient_edit', { 'id': ingredient.id }) }}">Edit this ingredient ?</a>
+                        <a href="{{ path('ingredient_edit', { 'id': ingredient.id }) }}">Edit this ingredient ?</a>
                         </div>
                         <div class="col-md-9">
                             <ul class="items">
@@ -60,4 +62,7 @@
             </div>
         </div>
     </div>
+    {% endfor %}
+
+
 {% endblock %}

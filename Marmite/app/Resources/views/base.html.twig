@@ -54,37 +54,40 @@
     </div>
 </div>
 {% endblock %}
-{% block menu %}
-<nav class="navbar navbar-default" role="navigation" id="nav">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <img alt="" src="">
-            </a>
+{% block menu %}    </div>
+    <nav class="navbar navbar-default" role="navigation" id="nav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img alt="" src="">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="{{ path('recette_new') }}">Add Recipe</li>
+                    <li><a href="{{ path('ingredient_new') }}">Add Ingredient</li>
+                    <li><a href="{{ path('recette_list') }}">List Recipes</li>
+                    <li><a href="{{ path('ingredient_list') }}">List Ingredients</li>
+                    <li><a href="#">Show Recipe of the Day</li>
+                    <li><a href="#">Show Randoms Recipes</li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Add Recipe</li>
-                <li><a href="#">List Recipes</li>
-                <li><a href="#">Show Recipe of the Day</li>
-                <li><a href="#">Show Randoms Recipes</li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav></div>
 {% endblock %}
 
-<div class="container-fluid" style="background-color: floralwhite">
+<div class="container-fluid" style="background-color: white">
     <div class="row">
         <div class="col-xs-5 col-xs-offset-5">
     {% block body %}{% endblock %}
     </div>
     </div>
 </div>
+{% block encart %}{% endblock %}
