@@ -47,11 +47,10 @@ class Recipes
     private $instructions;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="Ingredients", type="text")
+     * @ORM\OneToMany(targetEntity="Ingredients", mappedBy="Recipes")
      */
     private $ingredients;
+
 
     /**
      * @var \DateTime
@@ -260,11 +259,11 @@ class Recipes
     /**
      * Set ingredients
      *
-     * @param string $ingredients
+     * @param \RecipesBundle\Entity\Ingredients $ingredients
      *
      * @return Recipes
      */
-    public function setIngredients($ingredients)
+    public function setIngredients(\RecipesBundle\Entity\Ingredients $ingredients=null)
     {
         $this->ingredients = $ingredients;
 
@@ -274,7 +273,7 @@ class Recipes
     /**
      * Get ingredients
      *
-     * @return string
+     * @return \RecipesBundle\Entity\Recipes
      */
     public function getIngredients()
     {
@@ -294,6 +293,7 @@ class Recipes
 
         return $this;
     }
+
 
     /**
      * Get preparationTime

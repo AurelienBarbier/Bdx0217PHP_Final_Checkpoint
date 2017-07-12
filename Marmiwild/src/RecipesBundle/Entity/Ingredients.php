@@ -28,6 +28,11 @@ class Ingredients
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Recipes", inversedBy="Ingredients")
+     */
+    private $recipe;
+
 
     /**
      * Get id
@@ -62,5 +67,28 @@ class Ingredients
     {
         return $this->name;
     }
-}
 
+    /**
+     * Set recipe
+     *
+     * @param \RecipesBundle\Entity\Recipes $recipe
+     *
+     * @return Ingredients
+     */
+    public function setRecipe(\RecipesBundle\Entity\Recipes $recipe = null)
+    {
+        $this->recipe = $recipe;
+
+        return $this;
+    }
+
+    /**
+     * Get recipe
+     *
+     * @return \RecipesBundle\Entity\Recipes
+     */
+    public function getRecipe()
+    {
+        return $this->recipe;
+    }
+}

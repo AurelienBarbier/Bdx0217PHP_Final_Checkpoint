@@ -4,7 +4,6 @@ namespace RecipesBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use RecipesBundle\Entity\Recipes;
 use RecipesBundle\Form\RecipesType;
 
