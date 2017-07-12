@@ -6,23 +6,23 @@
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>N°</th>
                 <td>{{ recipe.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nom</th>
                 <td>{{ recipe.name }}</td>
             </tr>
             <tr>
-                <th>Time</th>
+                <th>Temps en min</th>
                 <td>{{ recipe.time }}</td>
             </tr>
             <tr>
-                <th>Level</th>
+                <th>Niveau</th>
                 <td>{{ recipe.level }}</td>
             </tr>
             <tr>
-                <th>Nbperson</th>
+                <th>Personnes</th>
                 <td>{{ recipe.nbPerson }}</td>
             </tr>
             <tr>
@@ -30,7 +30,7 @@
                 <td>{{ recipe.ingredients }}</td>
             </tr>
             <tr>
-                <th>Prepare</th>
+                <th>Preparation</th>
                 <td>{{ recipe.prepare }}</td>
             </tr>
         </tbody>
@@ -38,14 +38,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('recipe_index') }}">Back to the list</a>
+            <a href="{{ path('recipe_index') }}">Retour à la liste des recettes</a>
         </li>
         <li>
-            <a href="{{ path('recipe_edit', { 'id': recipe.id }) }}">Edit</a>
+            <a href="{{ path('recipe_edit', { 'id': recipe.id }) }}">Editer</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

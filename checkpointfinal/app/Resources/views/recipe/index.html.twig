@@ -1,22 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Recipes list</h1>
+    <div class="row">
+        <div class="col s6 offset-s4">
+    <h3>Liste des recettes</h3>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col s3 offset-s8">
+            <ul>
+                <li>
+                    <a href="{{ path('recipe_new') }}"><button>Créer nouvelle recette</button></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s10 offset-s1">
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Time</th>
-                <th>Level</th>
-                <th>Nbperson</th>
+                <th>N°</th>
+                <th>Nom</th>
+                <th>Temps en min</th>
+                <th>Niveau</th>
+                <th>Personnes</th>
                 <th>Ingredients</th>
-                <th>Prepare</th>
+                <th>Preparation</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
+
         {% for recipe in recipes %}
             <tr>
                 <td><a href="{{ path('recipe_show', { 'id': recipe.id }) }}">{{ recipe.id }}</a></td>
@@ -38,12 +55,11 @@
                 </td>
             </tr>
         {% endfor %}
+
         </tbody>
     </table>
+        </div>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('recipe_new') }}">Create a new recipe</a>
-        </li>
-    </ul>
+
 {% endblock %}
