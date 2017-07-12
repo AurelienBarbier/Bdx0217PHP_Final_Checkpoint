@@ -37,6 +37,7 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="string", length=25, unique=true)
      * @Assert\NotBlank()
+     * @Assert\Type("string")
      */
     private $username;
 
@@ -236,5 +237,15 @@ class User implements UserInterface, \Serializable
     public function getRecettes()
     {
         return $this->recettes;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
 }

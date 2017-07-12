@@ -44,7 +44,6 @@ class Recette
      * @var string
      *
      * @ORM\Column(name="image", type="text", nullable=true)
-     * @Assert\Type("string")
      */
     private $image;
 
@@ -68,6 +67,15 @@ class Recette
      *      max = 5)
      */
     private $difficulte;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nb_person", type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Type("integer")
+     */
+    private $nbPersonne;
 
     /**
      * @var \DateTime
@@ -306,5 +314,29 @@ class Recette
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * Set nbPersonne
+     *
+     * @param integer $nbPersonne
+     *
+     * @return Recette
+     */
+    public function setNbPersonne($nbPersonne)
+    {
+        $this->nbPersonne = $nbPersonne;
+
+        return $this;
+    }
+
+    /**
+     * Get nbPersonne
+     *
+     * @return integer
+     */
+    public function getNbPersonne()
+    {
+        return $this->nbPersonne;
     }
 }

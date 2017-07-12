@@ -10,4 +10,12 @@ namespace CuisinonsBundle\Repository;
  */
 class RecetteRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByWeek()
+    {
+        $query = $this->createQueryBuilder('r')
+            ->where('WEEK(r.date_at) = WEEK(NOW())')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

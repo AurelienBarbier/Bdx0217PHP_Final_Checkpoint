@@ -1,1 +1,40 @@
 {% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        {% for recette in app.user.recettes %}
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    {% if recette.image %}
+                        <img src="{{ asset('uploads/'~recette.image) }}" alt="">
+                    {% endif %}
+                    <div class="caption">
+                        <h3>{{ recette.nom }}</h3>
+                        <p>{{ recette.description }}</p>
+                        <p>Nombre de personne : {{ recette.nbPersonne }}</p>
+                        <p>Difficulté : {{ recette.difficulte }}</p>
+                        <p>Créée le : {{ recette.createdAt|date('j/m/Y') }} par {{ recette.user.username }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="page-header">
+                <h3>Les recettes de la semaine</h3>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="page-header">
+                <h3>Les recettes les + difficiles</h3>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="page-header">
+                <h3>Les recettes les + appréciées</h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -28,6 +28,7 @@ class RecetteType extends AbstractType
             ->add('nom', TextType::class, array('label' => 'Nom'))
             ->add('description', TextareaType::class, array('label' => 'Description'))
             ->add('temps', TimeType::class, array('label' => 'Temps'))
+            ->add('nbPersonne', IntegerType::class, array('label' => 'Nombre de personne'))
             ->add('difficulte', IntegerType::class, array('label' => 'Difficulté'))
             ->add('ingredients', CollectionType::class, array(
                 'label' => ' ',
