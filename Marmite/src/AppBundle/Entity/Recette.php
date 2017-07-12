@@ -24,6 +24,13 @@ class Recette
     /**
      * @var string
      *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="picture", type="string", length=255, nullable=true)
      */
     private $picture;
@@ -43,7 +50,7 @@ class Recette
     /**
      * @var string
      *
-     * @ORM\Column(name="createur", type="string", length=255)
+     * @ORM\Column(name="createur", type="string", length=255, nullable=true)
      */
     private $createur;
 
@@ -76,6 +83,30 @@ class Recette
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Recette
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -171,7 +202,7 @@ class Recette
      */
     public function getCreateur()
     {
-        return $this->ingredient;
+        return $this->createur;
     }
 
     /**
@@ -299,5 +330,10 @@ class Recette
     public function removeIngredient(\AppBundle\Entity\Ingredient $ingredient)
     {
         $this->ingredient->removeElement($ingredient);
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

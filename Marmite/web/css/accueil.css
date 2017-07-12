@@ -269,15 +269,15 @@ section.module p:last-child {
 }
 section.module.content {
     padding: 40px 0;
-    height: 600px;
+    height: 400px;
 }
 section.module.parallax {
-    height: 600px;
+    height: 400px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover !important;
-    margin-top: -30px;
+    margin-top: -270px;
 }
 section.module.parallax h1 {
     color: rgba(255, 255, 255, 0.8);

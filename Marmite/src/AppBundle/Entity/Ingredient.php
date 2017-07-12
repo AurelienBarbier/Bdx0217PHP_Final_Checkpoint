@@ -107,4 +107,9 @@ class Ingredient
     {
         return $this->recette;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

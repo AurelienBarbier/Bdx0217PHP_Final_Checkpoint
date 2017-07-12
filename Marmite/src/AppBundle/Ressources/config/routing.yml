@@ -1,7 +1,57 @@
 homepage:
     path:     /home
-    defaults: { _controller: AppBundle:Default:indexR }
+    defaults: { _controller: "AppBundle:Default:indexR" }
 
 accueil:
     path:    /accueil
-    defaults: { _controller: AppBundle:Default:showIndex }
+    defaults: { _controller: "AppBundle:Default:showIndex" }
+
+recette_index:
+    path:     /recette
+    defaults: { _controller: "AppBundle:Recette:index" }
+    methods:  GET
+
+recette_show:
+    path:     /recette/{id}/show
+    defaults: { _controller: "AppBundle:Recette:show" }
+    methods:  GET
+
+recette_new:
+    path:     /recette/new
+    defaults: { _controller: "AppBundle:Recette:new" }
+    methods:  [GET, POST]
+
+recette_edit:
+    path:     /recette/{id}/edit
+    defaults: { _controller: "AppBundle:Recette:edit" }
+    methods:  [GET, POST]
+
+recette_delete:
+    path:     /recette/{id}/delete
+    defaults: { _controller: "AppBundle:Recette:delete" }
+    methods:  DELETE
+
+ingredient_index:
+    path:     /ingredient
+    defaults: { _controller: "AppBundle:Ingredient:index" }
+    methods:  GET
+
+ingredient_show:
+    path:     /ingredient/{id}/show
+    defaults: { _controller: "AppBundle:Ingredient:show" }
+    methods:  GET
+
+ingredient_new:
+    path:     /ingredient/new
+    defaults: { _controller: "AppBundle:Ingredient:new" }
+    methods:  [GET, POST]
+
+ingredient_edit:
+    path:     /ingredient/{id}/edit
+    defaults: { _controller: "AppBundle:Ingredient:edit" }
+    methods:  [GET, POST]
+
+ingredient_delete:
+    path:     /ingredient/{id}/delete
+    defaults: { _controller: "AppBundle:Ingredient:delete" }
+    methods:  DELETE

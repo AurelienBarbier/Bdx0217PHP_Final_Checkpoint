@@ -1,3 +1,4 @@
+{% block head %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@
     <script src="{{ asset('js/navbar.js') }}"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
+
 <body>
 
 <div class="container-fluid" id="header">
@@ -22,57 +24,62 @@
         <img src="{{ asset('img/Logo.png') }}" class="img-responsive">
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-            <div class="input-group">
-                <div class="input-group-btn search-panel">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        <span id="search_concept">Filter by</span> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#contains">Contains</a></li>
-                        <li><a href="#doNotContains">Do not Contains</a></li>
-                        <li><a href="#4orMore">For 4 or more people </a></li>
-                        <li><a href="#1Only">For One person  </a></li>
-                        <li class="divider"></li>
-                        <li><a href="#all">Anything</a></li>
-                    </ul>
-                </div>
-                <input type="hidden" name="search_param" value="all" id="search_param">
-                <input type="text" class="form-control" name="x" placeholder="Recipes terms...">
-                <span class="input-group-btn">
+
+{% endblock %}
+{% block recherche %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="input-group">
+                    <div class="input-group-btn search-panel">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <span id="search_concept">Filter by</span> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#contains">Contains</a></li>
+                            <li><a href="#doNotContains">Do not Contains</a></li>
+                            <li><a href="#4orMore">For 4 or more people </a></li>
+                            <li><a href="#1Only">For One person  </a></li>
+                            <li class="divider"></li>
+                            <li><a href="#all">Anything</a></li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="search_param" value="all" id="search_param">
+                    <input type="text" class="form-control" name="x" placeholder="Recipes terms...">
+                    <span class="input-group-btn">
                     <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                 </span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<nav class="navbar navbar-default" role="navigation" id="nav">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <img alt="" src="">
-            </a>
+{% endblock %}
+{% block menu %}
+    <nav class="navbar navbar-default" role="navigation" id="nav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img alt="" src="">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Add Recipe</li>
+                    <li><a href="#">List Recipes</li>
+                    <li><a href="#">Show Recipe of the Day</li>
+                    <li><a href="#">Show Randoms Recipes</li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Add Recipe</li>
-                <li><a href="#">List Recipes</li>
-                <li><a href="#">Show Recipe of the Day</li>
-                <li><a href="#">Show Randoms Recipes</li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
+{% endblock %}
 
 <div class="container-fluid">
     <div id="myCarousel" class="carousel slide">
@@ -141,7 +148,7 @@
 
 <section class="module content">
     <div class="container">
-        <h2>Lorem Ipsum Dolor</h2>
+        <h2>Do you want to learn how to do it ?</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin hendrerit vitae purus quis imperdiet. Aenean elementum porta erat, at posuere est elementum non. Sed ut lorem eu ante ornare tristique quis eu odio. Proin nibh ligula, semper eget mauris nec, egestas mattis libero. Vestibulum auctor tellus vel augue rutrum lacinia. Nunc nec felis velit. Nulla augue magna, vehicula in convallis sed, pretium nec odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis a mauris vestibulum, ornare elit ac, consectetur sem. Pellentesque sem neque, ultricies nec lobortis eget, pellentesque nec lorem. Phasellus feugiat varius nisl, vel efficitur eros ultrices et. Sed sollicitudin, massa sit amet finibus eleifend, leo magna rhoncus sem, suscipit lacinia nulla mauris nec nibh. Aliquam ut massa id justo ullamcorper dictum vel rhoncus urna.
 
         </p>
@@ -152,7 +159,7 @@
 
 <section class="module parallax parallax-2">
     <div class="container" class="img-responsive">
-        <h1>Gardens</h1>
+        <h1>Photo Album</h1>
     </div>
 </section>
 
