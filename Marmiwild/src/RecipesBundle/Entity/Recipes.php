@@ -48,7 +48,7 @@ class Recipes
     private $instructions;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Ingredients", mappedBy="Recipes")
+     * @ORM\ManyToMany(targetEntity="Ingredients", mappedBy="recipes")
      */
     private $ingredients;
 

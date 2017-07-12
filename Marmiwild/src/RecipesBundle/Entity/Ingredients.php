@@ -31,7 +31,7 @@ class Ingredients
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Recipes", inversedBy="Ingredients")
+     * @ORM\ManyToMany(targetEntity="Recipes", inversedBy="ingredients")
      */
     private $recipes;
 
