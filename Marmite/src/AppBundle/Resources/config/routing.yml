@@ -1,0 +1,7 @@
+app_recette:
+    resource: "@AppBundle/Resources/config/routing/recette.yml"
+    prefix:   /recette
+
+app_ingredient:
+    resource: "@AppBundle/Resources/config/routing/ingredient.yml"
+    prefix:   /ingredient
