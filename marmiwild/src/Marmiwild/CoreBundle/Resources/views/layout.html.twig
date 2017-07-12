@@ -4,11 +4,44 @@
 <head>
     <title>MarmiWild</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('bootstrap-3.3.7/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-    {% block content %}{% endblock %}
 
+    <nav>
+        <a href="{{ path('recette_index') }}"><img class="brand-logo" src="{{ asset('img/core/logo.png') }}"></a>
+        <ul class="nav-list">
+            <li><a href="" data-toggle="modal" data-target="#modal-add-recipe">Ajouter</a></li>
+            <li><a href="{{ path('recette_index') }}">Parcourir</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="container-fluid">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-add-recipe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                {{ render(controller('MarmiwildCoreBundle:Recette:new')) }}
+            </div>
+        </div>
+    </div>
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('bootstrap-3.3.7/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/ingredients_collection.js') }}"></script>
+    <script src="{{ asset('js/criteres.js') }}"></script>
+    <script src="{{ asset('js/spin.js') }}"></script>
+    <script src="{{ asset('js/loading.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>

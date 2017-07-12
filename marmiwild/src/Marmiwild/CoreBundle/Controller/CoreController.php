@@ -4,10 +4,10 @@ namespace Marmiwild\CoreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class CoreController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('MarmiwildCoreBundle:Default:index.html.twig');
+        return $this->render('MarmiwildCoreBundle:Core:index.html.twig');
     }
 }

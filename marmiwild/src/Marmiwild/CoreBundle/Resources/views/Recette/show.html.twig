@@ -1,0 +1,27 @@
+{% extends 'MarmiwildCoreBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <h2>{{ recette.nom }}</h2>
+            <img src="{{ asset('uploads/' ~ recette.image) }}" alt="...">
+            <p>{{ recette.categorie }}</p>
+            <p>Pour {{ recette.nbPersonnes }} personne(s)</p>
+            <p>Temps de préparation : {{ recette.categorie }} min</p>
+            <p>Temps de cuisson : {{ recette.categorie }} min</p>
+
+            <p>Ingrédients :</p>
+            <ul>
+            {% for composant in recette.recettesIngredients %}
+                <li>{{ composant.quantite }} {{ composant.ingredient.nom }}</li>
+            {% endfor %}
+            </ul>
+
+            <p>Préparation :</p>
+            <p>{{ recette.etapes }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

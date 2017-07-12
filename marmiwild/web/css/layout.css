@@ -1,0 +1,42 @@
+body {
+    background-color: #fff9ed;
+}
+.content {
+    width: 80%;
+    background-color: #FFF;
+    height: 100vh;
+    margin: 0 auto;
+}
+.brand-logo {
+    padding: 20px 30px;
+    height: 100px;
+}
+
+.nav-list li{
+    font-size: 26px;
+    display: inline;
+    margin-right: 35px;
+}
+.nav-list li:last-child{
+    margin-right: 50px;
+}
+
+nav{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+nav a {
+    color: #E2611E;
+    font-weight: 800;
+}
+
+#nav-filtre {
+    text-align: center;
+}
+#nav-filtre li {
+    display: inline;
+    margin-right: 20px;
+}

@@ -73,7 +73,7 @@ class Recette_Ingredient
     }
 
     /**
-     * Set recette
+     * Set Recette
      *
      * @param \Marmiwild\CoreBundle\Entity\Recette $recette
      *
@@ -87,7 +87,7 @@ class Recette_Ingredient
     }
 
     /**
-     * Get recette
+     * Get Recette
      *
      * @return \Marmiwild\CoreBundle\Entity\Recette
      */

@@ -1,0 +1,51 @@
+{% extends 'MarmiwildCoreBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="text-center">Bienvenue sur Marmiwild, le site des recettes "sauvages" !</h3>
+        </div>
+
+        <div>
+            <ul id="nav-filtre">
+                <li><a href="" class="filtre" data-critere="recentes">Les 3+ récentes</a></li>
+                <li><a href="" class="filtre" data-critere="faciles">Les 5+ faciles</a></li>
+                <li><a href="" class="filtre" data-critere="economes">Les 3+ économes</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="grille-recette" class="row">
+        {% for recette in recettes %}
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="{{ asset('uploads/' ~ recette.image) }}" alt="...">
+                <div class="caption">
+                    <a href="{{ path('recette_show', {'id': recette.id}) }}"><h3 class="text-center">{{ recette.nom }}</h3></a>
+                    <div class="row" style="margin: 20px 0">
+                        <div class="col-sm-6">
+                            <p class="text-center">
+                                {% for n in 1..recette.difficulte %}
+                                <i class="fa fa-star fa-2x" aria-hidden="true" style="color: #A46A1F"></i>
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="text-center">
+                                {% for n in 1..recette.cout %}
+                                <i class="fa fa-euro fa-2x" aria-hidden="true" style="color: #030323"></i>
+                                {% endfor %}
+                        </div>
+                    </div>
+                    <p class="text-right"><a href="{{ path('recette_edit', {'id': recette.id}) }}" class="btn btn-primary" role="button">Modifier</a>
+                        <a href="{{ path('recette_delete', {'id': recette.id}) }}" class="btn btn-danger" role="button">Supprimer</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

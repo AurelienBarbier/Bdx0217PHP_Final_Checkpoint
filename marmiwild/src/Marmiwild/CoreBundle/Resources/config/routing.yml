@@ -1,3 +1,27 @@
-marmiwild_core_homepage:
+homepage:
     path:     /
-    defaults: { _controller: MarmiwildCoreBundle:Default:index }
+    defaults: { _controller: MarmiwildCoreBundle:Core:index }
+
+recette_index:
+    path:     /recettes
+    defaults: { _controller: MarmiwildCoreBundle:Recette:index }
+
+recette_new:
+    path:     /recette/new
+    defaults: { _controller: MarmiwildCoreBundle:Recette:new }
+
+recette_show:
+    path:     /recette/show/{id}
+    defaults: { _controller: MarmiwildCoreBundle:Recette:show }
+
+recette_edit:
+    path:     /recette/edit/{id}
+    defaults: { _controller: MarmiwildCoreBundle:Recette:edit }
+
+recette_delete:
+    path:     /recette/delete/{id}
+    defaults: { _controller: MarmiwildCoreBundle:Recette:delete }
+
+recette_filtre:
+    path:     /recette/filtre/{critere}
+    defaults: { _controller: MarmiwildCoreBundle:Recette:filterRecettes }

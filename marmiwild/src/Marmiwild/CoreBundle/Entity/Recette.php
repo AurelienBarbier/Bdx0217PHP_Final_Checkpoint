@@ -45,9 +45,9 @@ class Recette
     /**
      * @var int
      *
-     * @ORM\Column(name="facilite", type="integer", nullable=true)
+     * @ORM\Column(name="difficulte", type="integer", nullable=true)
      */
-    private $facilite;
+    private $difficulte;
 
     /**
      * @var int
@@ -85,7 +85,12 @@ class Recette
     private $dateCreation;
 
     /**
-     * @ORM\OneToMany(targetEntity="Recette_Ingredient", mappedBy="recette")
+     * @ORM\Column(type="string")
+     */
+    private $image;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Recette_Ingredient", mappedBy="recette", cascade={"persist", "remove"})
      */
     private $recettesIngredients;
 
@@ -169,30 +174,6 @@ class Recette
     public function getNbPersonnes()
     {
         return $this->nbPersonnes;
-    }
-
-    /**
-     * Set facilite
-     *
-     * @param integer $facilite
-     *
-     * @return Recette
-     */
-    public function setFacilite($facilite)
-    {
-        $this->facilite = $facilite;
-
-        return $this;
-    }
-
-    /**
-     * Get facilite
-     *
-     * @return int
-     */
-    public function getFacilite()
-    {
-        return $this->facilite;
     }
 
     /**
@@ -329,10 +310,10 @@ class Recette
      *
      * @return Recette
      */
-    public function addRecettesIngredient(\Marmiwild\CoreBundle\Entity\Recette_Ingredient $recettesIngredient)
+    public function addRecettesIngredient(Recette_Ingredient $recettesIngredient)
     {
         $this->recettesIngredients[] = $recettesIngredient;
-
+        $recettesIngredient->setRecette($this);
         return $this;
     }
 
@@ -341,7 +322,7 @@ class Recette
      *
      * @param \Marmiwild\CoreBundle\Entity\Recette_Ingredient $recettesIngredient
      */
-    public function removeRecettesIngredient(\Marmiwild\CoreBundle\Entity\Recette_Ingredient $recettesIngredient)
+    public function removeRecettesIngredient(Recette_Ingredient $recettesIngredient)
     {
         $this->recettesIngredients->removeElement($recettesIngredient);
     }
@@ -356,4 +337,39 @@ class Recette
         return $this->recettesIngredients;
     }
 
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Set difficulte
+     *
+     * @param integer $difficulte
+     *
+     * @return Recette
+     */
+    public function setDifficulte($difficulte)
+    {
+        $this->difficulte = $difficulte;
+
+        return $this;
+    }
+
+    /**
+     * Get difficulte
+     *
+     * @return integer
+     */
+    public function getDifficulte()
+    {
+        return $this->difficulte;
+    }
 }
