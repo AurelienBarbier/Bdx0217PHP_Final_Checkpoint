@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><img src= "{{ asset('images/marmiwild_logo.png') }}" class="logo" id="wildlogo">
+                    <a class="navbar-brand" href="{{ path('marmiwild_homepage') }}"><img src= "{{ asset('images/marmiwild_logo.png') }}" class="logo" id="wildlogo">
                     </a>
                 </div>
 
@@ -26,7 +26,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Add a new recipe</a></li>
+                                <li><a href="{{ path('recipes_new') }}">Add a new recipe</a></li>
                                 <li><a href="#">Show All Recipes</a></li>
                                 <li><a href="#">Show Vegies Recipes</a></li>
                                 <li role="separator" class="divider"></li>

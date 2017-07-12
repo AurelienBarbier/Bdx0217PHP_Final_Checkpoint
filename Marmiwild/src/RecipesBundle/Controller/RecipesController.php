@@ -24,7 +24,7 @@ class RecipesController extends Controller
 
         $recipes = $em->getRepository('RecipesBundle:Recipes')->findAll();
 
-        return $this->render('recipes/index.html.twig', array(
+        return $this->render('RecipesBundle:recipes:index.html.twig', array(
             'recipes' => $recipes,
         ));
     }
@@ -47,7 +47,7 @@ class RecipesController extends Controller
             return $this->redirectToRoute('recipes_show', array('id' => $recipe->getId()));
         }
 
-        return $this->render('recipes/new.html.twig', array(
+        return $this->render('RecipesBundle:recipes:new.html.twig', array(
             'recipe' => $recipe,
             'form' => $form->createView(),
         ));
@@ -61,7 +61,7 @@ class RecipesController extends Controller
     {
         $deleteForm = $this->createDeleteForm($recipe);
 
-        return $this->render('recipes/show.html.twig', array(
+        return $this->render('RecipesBundle:recipes:show.html.twig', array(
             'recipe' => $recipe,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -85,7 +85,7 @@ class RecipesController extends Controller
             return $this->redirectToRoute('recipes_edit', array('id' => $recipe->getId()));
         }
 
-        return $this->render('recipes/edit.html.twig', array(
+        return $this->render('RecipesBundle:recipes:edit.html.twig', array(
             'recipe' => $recipe,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
