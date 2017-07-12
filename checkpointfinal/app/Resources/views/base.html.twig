@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-            <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
-            <link rel="stylesheet" type="text/css" href="{{ asset('css/form.css') }}">
-            <meta charset="UTF-8"/>
-            <title>{% block title %}Welcome!{% endblock %}</title>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/form.css') }}">
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
 
-            {% block stylesheets %}
-            {% endblock %}
-
-            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-        </head>
-    <body>
-
-    {% block logo %}
-        <div class="container-fluid biglogo">
-            <div class="row">
-                <div class="col s12">
-                    <div class="logo" alt="logo">
-                        <a href="{{ path('marmi_wild_homepage') }}"><img class="responsive-img" id="logo" src="{{ asset("css/img/logo/marmiwild_logo.png") }}"/></a>
-                    </div>
-                </div>
-            </div>
+    {% block stylesheets %}
     {% endblock %}
 
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
 
-    {% block header %}
+{% block logo %}
+    <div class="row">
+        <div class="col s12">
+            <div class="logo" alt="logo">
+                <a href="{{ path('marmi_wild_homepage') }}"><img class="responsive-img" id="logo"
+                                                                 src="{{ asset("css/img/logo/marmiwild_logo.png") }}"/></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block header %}
     <div class="container-fluid header">
         <div class="row">
             <div class="col s12">
@@ -36,15 +36,15 @@
     </div>
 
 
-    {% endblock %}
+{% endblock %}
 
-    {% block body %}
-    {% endblock %}
+{% block body %}
+{% endblock %}
 
 
-    {% block javascripts %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-    {% endblock %}
-    </body>
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+{% endblock %}
+</body>
 </html>
 

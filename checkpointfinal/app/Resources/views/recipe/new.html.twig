@@ -7,7 +7,9 @@
         <div class="col s3 offset-s9">
             <ul>
                 <li>
-                    <a href="{{ path('recipe_index') }}"><button>Retour à la liste des recettes</button></a>
+                    <a href="{{ path('recipe_index') }}">
+                        <button>Retour à la liste des recettes</button>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -15,11 +17,11 @@
 
     <div class="row">
         <div class="col s10 offset-s1">
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Créer" />
-    {{ form_end(form) }}
-    </div>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Créer"/>
+            {{ form_end(form) }}
+        </div>
     </div>
 
 
