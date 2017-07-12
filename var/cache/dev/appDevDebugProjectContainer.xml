@@ -620,7 +620,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>hLojsOZ7uT2lV0Kdw-u8By</argument>
+      <argument>TQ0CUSkQj0FglByrbyt8Jg</argument>
       <argument>/home/wilder/Documents/Wild-Code-School/www-dev/checkpoint/Bdx0217PHP_Final_Checkpoint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -630,7 +630,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>hLojsOZ7uT2lV0Kdw-u8By</argument>
+      <argument>TQ0CUSkQj0FglByrbyt8Jg</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -1869,6 +1869,13 @@
         <argument>null</argument>
       </call>
       <call method="add">
+        <argument type="service" id="security.request_matcher.e93c098b629df4c0540569d2d0577c6de24e211bedf793fa1275a40ed68a294079a761a7"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
         <argument type="service" id="security.request_matcher.41091f70e80f3936f117ff4e6751842a93fdf2b8491e2b284ce03ec84464d46405047129"/>
         <argument type="collection">
           <argument>ROLE_USER</argument>
@@ -2312,12 +2319,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>59662de0396638.34007387</argument>
+      <argument>59663a48270eb6.56779184</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>59662de0396638.34007387</argument>
+      <argument>59663a48270eb6.56779184</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2352,6 +2359,9 @@
     </service>
     <service id="security.request_matcher.065c455eccb29716187e6bb678dcb66c91dac978068edb8a3e4648d6d844d0087b308665" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/login</argument>
+    </service>
+    <service id="security.request_matcher.e93c098b629df4c0540569d2d0577c6de24e211bedf793fa1275a40ed68a294079a761a7" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/inscription</argument>
     </service>
     <service id="security.request_matcher.41091f70e80f3936f117ff4e6751842a93fdf2b8491e2b284ce03ec84464d46405047129" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/</argument>
@@ -3537,7 +3547,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>QslvALS-kH</argument>
       <argument>0</argument>
-      <argument>hLojsOZ7uT2lV0Kdw-u8By</argument>
+      <argument>TQ0CUSkQj0FglByrbyt8Jg</argument>
       <argument>/home/wilder/Documents/Wild-Code-School/www-dev/checkpoint/Bdx0217PHP_Final_Checkpoint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3545,7 +3555,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>rvEzpE3uVH</argument>
       <argument>0</argument>
-      <argument>hLojsOZ7uT2lV0Kdw-u8By</argument>
+      <argument>TQ0CUSkQj0FglByrbyt8Jg</argument>
       <argument>/home/wilder/Documents/Wild-Code-School/www-dev/checkpoint/Bdx0217PHP_Final_Checkpoint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3553,7 +3563,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>4tdFW0HE7A</argument>
       <argument>0</argument>
-      <argument>hLojsOZ7uT2lV0Kdw-u8By</argument>
+      <argument>TQ0CUSkQj0FglByrbyt8Jg</argument>
       <argument>/home/wilder/Documents/Wild-Code-School/www-dev/checkpoint/Bdx0217PHP_Final_Checkpoint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3561,7 +3571,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Uz18Keeb7q</argument>
       <argument>0</argument>
-      <argument>hLojsOZ7uT2lV0Kdw-u8By</argument>
+      <argument>TQ0CUSkQj0FglByrbyt8Jg</argument>
       <argument>/home/wilder/Documents/Wild-Code-School/www-dev/checkpoint/Bdx0217PHP_Final_Checkpoint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

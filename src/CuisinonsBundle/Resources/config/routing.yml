@@ -29,3 +29,13 @@ cuisinons_recette_delete:
     defaults: { _controller: CuisinonsBundle:Recette:delete }
     requirements:
         id: \d+
+
+cuisinons_user_profil:
+    path:    /profil-utilisateur/{id}
+    defaults: { _controller: CuisinonsBundle:User:profil }
+    requirements:
+        id: \d+
+
+cuisinons_user_register:
+    path:    /inscription
+    defaults: { _controller: CuisinonsBundle:User:register }

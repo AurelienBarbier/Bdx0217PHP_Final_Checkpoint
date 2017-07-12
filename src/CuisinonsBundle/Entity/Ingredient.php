@@ -28,7 +28,7 @@ class Ingredient
      *
      * @ORM\Column(name="nom", type="string", length=255)
      * @Assert\NotBlank()
-     * @Assert\type("string")
+     * @Assert\Type("string")
      */
     private $nom;
 
@@ -37,7 +37,7 @@ class Ingredient
      *
      * @ORM\Column(name="quantite", type="integer")
      * @Assert\NotBlank()
-     * @Assert\type("integer")
+     * @Assert\Type("integer")
      * @Assert\GreaterThan(0)
      *
      */

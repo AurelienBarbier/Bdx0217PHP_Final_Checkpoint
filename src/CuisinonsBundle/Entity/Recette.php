@@ -28,7 +28,7 @@ class Recette
      *
      * @ORM\Column(name="nom", type="string", length=255)
      * @Assert\NotBlank()
-     * @Assert\type("string")
+     * @Assert\Type("string")
      *
      */
     private $nom;
@@ -44,7 +44,7 @@ class Recette
      * @var string
      *
      * @ORM\Column(name="image", type="text", nullable=true)
-     * @Assert\type("string")
+     * @Assert\Type("string")
      */
     private $image;
 
@@ -62,7 +62,7 @@ class Recette
      *
      * @ORM\Column(name="difficulte", type="integer")
      * @Assert\NotBlank()
-     * @Assert\type("integer")
+     * @Assert\Type("integer")
      * @Assert\Range(
      *      min = 1,
      *      max = 5)

@@ -152,6 +152,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'cuisinons_recette_delete')), array (  '_controller' => 'CuisinonsBundle\\Controller\\RecetteController::deleteAction',));
         }
 
+        // cuisinons_user_profil
+        if (0 === strpos($pathinfo, '/profil-utilisateur') && preg_match('#^/profil\\-utilisateur/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cuisinons_user_profil')), array (  '_controller' => 'CuisinonsBundle\\Controller\\UserController::profilAction',));
+        }
+
+        // cuisinons_user_register
+        if ('/inscription' === $pathinfo) {
+            return array (  '_controller' => 'CuisinonsBundle\\Controller\\UserController::registerAction',  '_route' => 'cuisinons_user_register',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
