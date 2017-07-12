@@ -142,6 +142,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'CuisinonsBundle\\Controller\\RecetteController::addAction',  '_route' => 'cuisinons_recette_add',);
         }
 
+        // cuisinons_recette_edit
+        if (0 === strpos($pathinfo, '/edition-recette') && preg_match('#^/edition\\-recette/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cuisinons_recette_edit')), array (  '_controller' => 'CuisinonsBundle\\Controller\\RecetteController::editAction',));
+        }
+
+        // cuisinons_recette_delete
+        if (0 === strpos($pathinfo, '/suppression-recette') && preg_match('#^/suppression\\-recette/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cuisinons_recette_delete')), array (  '_controller' => 'CuisinonsBundle\\Controller\\RecetteController::deleteAction',));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

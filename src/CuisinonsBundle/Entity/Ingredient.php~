@@ -98,5 +98,28 @@ class Ingredient
     {
         return $this->quantite;
     }
-}
 
+    /**
+     * Set recette
+     *
+     * @param \CuisinonsBundle\Entity\Recette $recette
+     *
+     * @return Ingredient
+     */
+    public function setRecette(\CuisinonsBundle\Entity\Recette $recette = null)
+    {
+        $this->recette = $recette;
+
+        return $this;
+    }
+
+    /**
+     * Get recette
+     *
+     * @return \CuisinonsBundle\Entity\Recette
+     */
+    public function getRecette()
+    {
+        return $this->recette;
+    }
+}

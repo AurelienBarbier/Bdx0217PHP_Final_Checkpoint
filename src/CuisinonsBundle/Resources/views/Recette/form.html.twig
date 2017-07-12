@@ -11,8 +11,7 @@
     <h3>Ingrédients</h3>
     <ul class="ingredients" data-prototype="{{ form_widget(form.ingredients.vars.prototype)|e('html_attr') }}">
         {% for ingredient in form.ingredients %}
-            <li>{{ form_row(ingredients.nom) }}</li>
-            <li>{{ form_row(ingredients.quantite) }}</li>
+            <li>{{ form_row(ingredient.nom) }} {{ form_row(ingredient.quantite) }}</li>
         {% endfor %}
     </ul>
 

@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="recette")
  * @ORM\Entity(repositoryClass="CuisinonsBundle\Repository\RecetteRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Recette
 {
@@ -57,12 +58,19 @@ class Recette
     private $difficulte;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_at", type="datetime")
+     */
+    private $createdAt;
+
+    /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="recettes")
      */
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity="Ingredient", mappedBy="recette")
+     * @ORM\OneToMany(targetEntity="Ingredient", mappedBy="recette", cascade={"persist"})
      */
     private $ingredients;
 
@@ -218,5 +226,47 @@ class Recette
     public function getImage()
     {
         return $this->image;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ingredients = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add ingredient
+     *
+     * @param \CuisinonsBundle\Entity\Ingredient $ingredient
+     *
+     * @return Recette
+     */
+    public function addIngredient(\CuisinonsBundle\Entity\Ingredient $ingredient)
+    {
+        $this->ingredients[] = $ingredient;
+        $ingredient->setRecette($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove ingredient
+     *
+     * @param \CuisinonsBundle\Entity\Ingredient $ingredient
+     */
+    public function removeIngredient(\CuisinonsBundle\Entity\Ingredient $ingredient)
+    {
+        $this->ingredients->removeElement($ingredient);
+    }
+
+    /**
+     * Get ingredients
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIngredients()
+    {
+        return $this->ingredients;
     }
 }

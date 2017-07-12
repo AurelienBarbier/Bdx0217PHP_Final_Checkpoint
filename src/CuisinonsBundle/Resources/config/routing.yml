@@ -17,3 +17,15 @@ cuisinons_recette_list:
 cuisinons_recette_add:
     path:    /nouvelle-recette
     defaults: { _controller: CuisinonsBundle:Recette:add }
+
+cuisinons_recette_edit:
+    path:    /edition-recette/{id}
+    defaults: { _controller: CuisinonsBundle:Recette:edit }
+    requirements:
+        id: \d+
+
+cuisinons_recette_delete:
+    path:    /suppression-recette/{id}
+    defaults: { _controller: CuisinonsBundle:Recette:delete }
+    requirements:
+        id: \d+

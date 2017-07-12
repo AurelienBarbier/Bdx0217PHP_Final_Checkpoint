@@ -35,7 +35,8 @@ class RecetteType extends AbstractType
                 'allow_delete' => true,
                 'by_reference' => false
             ))
-            ->add('submit', SubmitType::class, array('label' => 'Créer'));
+            ->add('submit', SubmitType::class, array(
+                'label' => 'Valider'));
     }
     
     /**

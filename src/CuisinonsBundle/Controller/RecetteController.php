@@ -4,6 +4,7 @@ namespace CuisinonsBundle\Controller;
 
 use CuisinonsBundle\Entity\Recette;
 use CuisinonsBundle\Form\RecetteType;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -39,5 +40,55 @@ class RecetteController extends Controller
         return $this->render('CuisinonsBundle:Recette:add.html.twig', array(
             'form' => $form->createView()
         ));
+    }
+
+    public function editAction(Recette $recette, Request $request)
+    {
+        $orignialIngredients = new ArrayCollection();
+
+        foreach ($recette->getIngredients() as $ingredient) {
+            $orignialIngredients->add($ingredient);
+        }
+
+        $form = $this->createForm(RecetteType::class, $recette);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            foreach ($orignialIngredients as $ingredient) {
+                if (false === $recette->getIngredients()->contains($ingredient)) {
+                    $ingredient->setRecette(null);
+                    $em->remove($ingredient);
+                }
+            }
+            $em->flush();
+
+            $this->addFlash(
+                'success',
+                'La recette a bien été modifiée'
+            );
+
+            return $this->redirectToRoute('cuisinons_recette_list');
+        }
+
+        return $this->render('CuisinonsBundle:Recette:edit.html.twig', array(
+            'form' => $form->createView(),
+            'recette' => $recette
+        ));
+    }
+
+    public function deleteAction(Recette $recette)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($recette);
+        $em->flush();
+
+        $this->addFlash(
+            'success',
+            'La recette a bien été suprimée'
+        );
+
+        return $this->redirectToRoute('cuisinons_recette_list');
     }
 }

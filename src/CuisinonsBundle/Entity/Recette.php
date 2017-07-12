@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="recette")
  * @ORM\Entity(repositoryClass="CuisinonsBundle\Repository\RecetteRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Recette
 {
@@ -57,12 +58,19 @@ class Recette
     private $difficulte;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_at", type="datetime")
+     */
+    private $createdAt;
+
+    /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="recettes")
      */
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity="Ingredient", mappedBy="recette", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Ingredient", mappedBy="recette", cascade={"persist"}, orphanRemoval=true)
      */
     private $ingredients;
 
@@ -260,5 +268,31 @@ class Recette
     public function getIngredients()
     {
         return $this->ingredients;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Recette
+     *
+     * @ORM\PrePersist
+     */
+    public function setCreatedAt()
+    {
+        $this->createdAt = new \DateTime();
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 }
