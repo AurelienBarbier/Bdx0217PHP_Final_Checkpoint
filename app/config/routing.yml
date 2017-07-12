@@ -1,0 +1,3 @@
+cuisinons:
+    resource: "@CuisinonsBundle/Resources/config/routing.yml"
+    prefix:   /

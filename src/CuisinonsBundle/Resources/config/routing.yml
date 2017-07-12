@@ -1,0 +1,11 @@
+cuisinons_homepage:
+    path:     /
+    defaults: { _controller: CuisinonsBundle:Default:index }
+
+cuisinons_login:
+    path:     /login
+    defaults: { _controller: CuisinonsBundle:Default:login }
+
+cuisinons_logout:
+    path:     /logout
+    defaults: { _controller: CuisinonsBundle:Default:login }
