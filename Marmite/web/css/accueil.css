@@ -24,7 +24,6 @@ body {
 }
 .container {
     max-width: 100% !important;
-    overflow-x: hidden !important;
 }
 
 .navbar-nav {
@@ -130,11 +129,9 @@ body {
 
 #first-section .row .col-sm-4 {
 
-    height: 350px;
     border-left: 4px solid black;
     border-top: 4px solid black;
     padding: 0;
-    height: 337px;
 
 }
 
@@ -241,7 +238,6 @@ img.img-responsive {
     padding-bottom: -500px;
     max-height: 100%;
     max-width: 100%;
-    height: 270px;
 
 }
 

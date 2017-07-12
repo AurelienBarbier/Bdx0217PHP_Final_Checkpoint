@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Recette</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ recette.id }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ recette.picture }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ recette.description }}</td>
+            </tr>
+            <tr>
+                <th>Createur</th>
+                <td>{{ recette.createur }}</td>
+            </tr>
+            <tr>
+                <th>Cooking_time</th>
+                <td>{{ recette.cookingtime }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ recette.price }}</td>
+            </tr>
+            <tr>
+                <th>Difficulty</th>
+                <td>{{ recette.difficulty }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('recette_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('recette_edit', { 'id': recette.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
