@@ -10,11 +10,9 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $recettes = $this->getDoctrine()->getRepository('CuisinonsBundle:Recette')->findAll();
-        $recettesSemaine = $this->getDoctrine()->getRepository('CuisinonsBundle:Recette')->findAll();
 
         return $this->render('CuisinonsBundle:Default:index.html.twig', array(
-            'recettes' => $recettes,
-            'recettesSemaine' => $recettesSemaine
+            'recettes' => $recettes
         ));
     }
 
