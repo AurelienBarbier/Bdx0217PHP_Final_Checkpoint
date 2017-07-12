@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="row">
+
+
+        <h4 class="center-align">Mes recettes</h4>
+        <hr>
+        <div class="container addbtn">
+            <a class="waves-effect waves-light btn right" href="{{ path('wcs_marmi_recipe_add') }}" ><i class="material-icons left">add</i>Créer une recette</a>
+        </div>
+        <div id="portfolio" class="section gray">
+            <div class="container">
+                <div class="gallery row">
+                    {% for recette in  app.user.recettes %}
+                    <div class="col l4 m6 s12 gallery-item gallery-expand gallery-filter {{ recette.type }}">
+
+                        <div class="gallery-curve-wrapper">
+                            <a class="gallery-cover gray">
+                                <img class="responsive-img" src="{{ asset('images/' ~ recette.imageUrl) }}" alt="placeholder">
+                            </a>
+                            <div class="gallery-header">
+                                <span>{{ recette.nom }} </span>
+                            </div>
+                            <div class="gallery-body">
+                                <div class="title-wrapper">
+                                    <h3>{{ recette.nom }}</h3>
+                                    <span class="price">Difficulté : {{ recette.difficulty }} / 20</span>
+                                </div>
+
+
+                                <p class="description ingredients">
+                                    {% for ingredient in recette.ingredients %}
+                                        <span class="quantity">{{ ingredient.quantity }}</span> {{ ingredient.nom }}<br>
+
+                                    {% endfor %}
+                                </p>
+                                <hr>
+                                <p class="description">
+                                    {{ recette.description|nl2br }}
+                                </p>
+
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <a class="carousel-item" href="#"><img src="{{ asset('images/' ~ recette.imageUrl) }}"></a>
+                                        {% for image in recette.images %}
+                                         <a class="carousel-item" href="#"><img src="{{ asset('images/' ~ image.imageUrl) }}"></a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-action">
+                                <a class="btn-floating btn-large waves-effect waves-light" href="{{ path('wcs_marmi_recipe_delete', {'recette': recette.id}) }}"><i class="material-icons">delete</i></a>
+                                <a class="btn-floating btn-large waves-effect waves-light" href="{{ path('wcs_marmi_recipe_delete', {'recette': recette.id}) }}"><i class="material-icons">mode_edit</i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

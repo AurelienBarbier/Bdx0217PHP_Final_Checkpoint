@@ -1,0 +1,27 @@
+wcs_marmi_homepage:
+    path:     /
+    defaults: { _controller: WCSMarmiBundle:Default:index }
+
+wcs_marmi_register:
+    path:     /inscription
+    defaults: { _controller: WCSMarmiBundle:Default:inscription }
+
+wcs_marmi_login:
+    path:     /connexion
+    defaults: { _controller: WCSMarmiBundle:Default:connexion }
+
+wcs_marmi_myrecipe:
+    path:     /recettes
+    defaults: { _controller: WCSMarmiBundle:Default:myrecipe }
+
+wcs_marmi_recipe_add:
+    path:     /recettes/ajout
+    defaults: { _controller: WCSMarmiBundle:Recipe:add }
+
+wcs_marmi_recipe_delete:
+    path:     /recettes/delete/{recette}
+    defaults: { _controller: WCSMarmiBundle:Recipe:delete }
+
+wcs_marmi_recipe_edit:
+    path:     /recettes/edit/{recette}
+    defaults: { _controller: WCSMarmiBundle:Recipe:edit }

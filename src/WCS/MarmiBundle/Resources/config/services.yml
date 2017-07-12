@@ -1,0 +1,4 @@
+services:
+#    wcs_marmi.example:
+#        class: WCS\MarmiBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

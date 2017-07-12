@@ -1,0 +1,108 @@
+{% extends "base.html.twig" %}
+
+            {% block navbarheader %}
+                <style>
+                    #search{
+                        margin-bottom: 0 !important;
+                    }
+                </style>
+                <div class="nav-header center">
+                    <h1>Le goût SAUVAGE</h1>
+
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </div>
+            {% endblock %}
+{% block categorie %}
+    <div class="categories-wrapper purple lighten-1">
+        <div class="categories-container">
+            <ul class="categories container">
+                <li class="active"><a href="#all">Toutes</a></li>
+                <li><a href="#salt">Salé</a></li>
+                <li><a href="#sugar">Sucrée</a></li>
+                <li><a href="#vegan">Vegan</a></li>
+
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div id="portfolio" class="section gray">
+        <div class="container">
+            <div class="gallery row">
+
+                {% for recette in recettes %}
+                    <div class="col l4 m6 s12 gallery-item gallery-expand gallery-filter {{ recette.type }}">
+
+                        <div class="gallery-curve-wrapper">
+                            <a class="gallery-cover gray">
+                                <img class="responsive-img" src="{{ asset('images/' ~ recette.imageUrl) }}" alt="placeholder">
+                            </a>
+                            <div class="gallery-header">
+                                <span>{{ recette.nom }} </span>
+                            </div>
+                            <div class="gallery-body">
+                                <div class="title-wrapper">
+                                    <h3>{{ recette.nom }}</h3>
+                                    <span class="price">Difficulté : {{ recette.difficulty }} / 20</span>
+                                </div>
+
+                                <p class="description">
+                                    Pour <input type="text" class="nbperscount" data-default="{{ recette.nbPersonne }}" value="{{ recette.nbPersonne }}"> personnes
+                                </p>
+
+                                <hr>
+                                <p class="description ingredients">
+                                    {% for ingredient in recette.ingredients %}
+                                        <span class="quantity" data-default="{{ ingredient.quantity }}">{{ ingredient.quantity }}</span> {{ ingredient.nom }}<br>
+
+                                    {% endfor %}
+                                </p>
+                                <hr>
+                                <p class="description">
+                                    {{ recette.description|nl2br }}
+                                </p>
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <a class="carousel-item" href="#"><img src="{{ asset('images/' ~ recette.imageUrl) }}"></a>
+                                        {% for image in recette.images %}
+                                            <a class="carousel-item" href="#"><img src="{{ asset('images/' ~ image.imageUrl) }}"></a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-action">
+                                <a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">favorite</i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div><!-- /.container -->
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $('.nbperscount').on('keyup', function(){
+           var value = $(this).val();
+           var defaut = $(this).data('default');
+           var ingredient = $(this).parent().next().next();
+           var quantities = ingredient.children('.quantity');
+           for (var indexingre in quantities){
+               if ($.isNumeric(indexingre)){
+                   var quantity = quantities[indexingre].innerHTML;
+                   quantities[indexingre].innerHTML = ($(quantities[indexingre]).data('default')/defaut*value);
+
+               }
+           }
+
+        });
+    </script>
+{% endblock %}

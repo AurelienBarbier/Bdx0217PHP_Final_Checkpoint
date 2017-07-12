@@ -2,8 +2,16 @@
 # https://symfony.com/doc/current/security.html
 security:
 
+    encoders:
+        WCS\MarmiBundle\Entity\User:
+            algorithm: bcrypt
+
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
+        our_db_provider:
+            entity:
+                class: WCSMarmiBundle:User
+                property: username
         in_memory:
             memory: ~
 
@@ -15,6 +23,15 @@ security:
 
         main:
             anonymous: ~
+            http_basic: ~
+            provider: our_db_provider
+            form_login:
+                login_path: wcs_marmi_login
+                check_path: login_check
+
+            logout:
+                path:   /logout
+                target: /
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate

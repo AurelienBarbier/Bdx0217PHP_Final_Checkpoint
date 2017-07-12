@@ -1,3 +1,14 @@
+wcs_marmi:
+    resource: "@WCSMarmiBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+login_check:
+    path:     /login_check
+    defaults: { _controller: WCSMarmiBundle:Default:logincheck }
+
+logout:
+    path:     /logout
