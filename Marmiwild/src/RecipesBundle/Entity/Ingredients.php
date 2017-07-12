@@ -3,6 +3,8 @@
 namespace RecipesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Ingredients
@@ -29,9 +31,9 @@ class Ingredients
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Recipes", inversedBy="Ingredients")
+     * @ORM\ManyToMany(targetEntity="Recipes", inversedBy="Ingredients")
      */
-    private $recipe;
+    private $recipes;
 
 
     /**
@@ -71,24 +73,26 @@ class Ingredients
     /**
      * Set recipe
      *
-     * @param \RecipesBundle\Entity\Recipes $recipe
+     * @param \RecipesBundle\Entity\Recipes $recipes
      *
      * @return Ingredients
      */
-    public function setRecipe(\RecipesBundle\Entity\Recipes $recipe = null)
+    public function setRecipes(\RecipesBundle\Entity\Recipes $recipes = null)
     {
-        $this->recipe = $recipe;
+        $this->recipes = $recipes;
 
         return $this;
     }
-
+    public function __construct()
+    {
+        $this->ingredients = new ArrayCollection();}
     /**
-     * Get recipe
+     * Get recipes
      *
      * @return \RecipesBundle\Entity\Recipes
      */
-    public function getRecipe()
+    public function getRecipes()
     {
-        return $this->recipe;
+        return $this->recipes;
     }
 }

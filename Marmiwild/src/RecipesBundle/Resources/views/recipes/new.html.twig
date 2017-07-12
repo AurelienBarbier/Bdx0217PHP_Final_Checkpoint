@@ -5,6 +5,15 @@
 
     <h1>Recipes creation</h1>
 
+        <form method="post">
+            <select name="nomplatdujour" size="1">
+                {% for ingredient in ingredients %}
+                <option>{{ ingredient.nom }}
+                    {% endfor %}
+            </select>
+            <input type="submit" value="Ajouter" class="submit">
+        </form>
+
     {{ form_start(form) }}
         {{ form_widget(form) }}
     {{ form_end(form) }}

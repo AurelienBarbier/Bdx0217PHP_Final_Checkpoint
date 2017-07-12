@@ -2,10 +2,12 @@
 
 namespace RecipesBundle\Controller;
 
+use RecipesBundle\Entity\Ingredients;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use RecipesBundle\Entity\Recipes;
 use RecipesBundle\Form\RecipesType;
+
 
 /**
  * Recipes controller.
@@ -20,11 +22,12 @@ class RecipesController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $recipes = $em->getRepository('RecipesBundle:Recipes')->findAll();
+        $ingredients= $em->getRepository('RecipesBundle:Ingredients')->findAll();
 
         return $this->render('RecipesBundle:recipes:index.html.twig', array(
             'recipes' => $recipes,
+            'ingredients'=>$ingredients,
         ));
     }
 
@@ -34,11 +37,12 @@ class RecipesController extends Controller
      */
     public function newAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $ingredients= $em->getRepository('RecipesBundle:Ingredients')->findAll();
         $recipe = new Recipes();
         $form = $this->createForm('RecipesBundle\Form\RecipesType', $recipe);
         $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+                if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($recipe);
             $em->flush();
@@ -48,6 +52,7 @@ class RecipesController extends Controller
 
         return $this->render('RecipesBundle:recipes:new.html.twig', array(
             'recipe' => $recipe,
+            'ingredients'=>$ingredients,
             'form' => $form->createView(),
         ));
     }
@@ -58,10 +63,13 @@ class RecipesController extends Controller
      */
     public function showAction(Recipes $recipe)
     {
+        $em = $this->getDoctrine()->getManager();
+        $ingredients= $em->getRepository('RecipesBundle:Ingredients')->findAll();
         $deleteForm = $this->createDeleteForm($recipe);
 
         return $this->render('RecipesBundle:recipes:show.html.twig', array(
             'recipe' => $recipe,
+            'ingredients'=>$ingredients,
             'delete_form' => $deleteForm->createView(),
         ));
     }

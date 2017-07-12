@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Entity\File as EmbeddedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Recipes
@@ -47,7 +48,7 @@ class Recipes
     private $instructions;
 
     /**
-     * @ORM\OneToMany(targetEntity="Ingredients", mappedBy="Recipes")
+     * @ORM\ManyToMany(targetEntity="Ingredients", mappedBy="Recipes")
      */
     private $ingredients;
 
@@ -126,7 +127,9 @@ class Recipes
 
     public function __construct()
     {
+        $this->ingredients = new ArrayCollection();
         $this->image = new EmbeddedFile();
+
     }
 
     /**
@@ -273,7 +276,7 @@ class Recipes
     /**
      * Get ingredients
      *
-     * @return \RecipesBundle\Entity\Recipes
+     * @return \RecipesBundle\Entity\Ingredients
      */
     public function getIngredients()
     {
