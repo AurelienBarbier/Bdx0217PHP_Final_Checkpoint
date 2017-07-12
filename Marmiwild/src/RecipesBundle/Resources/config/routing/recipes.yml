@@ -1,0 +1,24 @@
+recipes_index:
+    path:     /
+    defaults: { _controller: "RecipesBundle:Recipes:index" }
+    methods:  GET
+
+recipes_show:
+    path:     /{id}/show
+    defaults: { _controller: "RecipesBundle:Recipes:show" }
+    methods:  GET
+
+recipes_new:
+    path:     /new
+    defaults: { _controller: "RecipesBundle:Recipes:new" }
+    methods:  [GET, POST]
+
+recipes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "RecipesBundle:Recipes:edit" }
+    methods:  [GET, POST]
+
+recipes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "RecipesBundle:Recipes:delete" }
+    methods:  DELETE

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Recipes</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ recipe.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ recipe.name }}</td>
+            </tr>
+            <tr>
+                <th>Wildchef</th>
+                <td>{{ recipe.wildChef }}</td>
+            </tr>
+            <tr>
+                <th>Instructions</th>
+                <td>{{ recipe.instructions }}</td>
+            </tr>
+            <tr>
+                <th>Ingredients</th>
+                <td>{{ recipe.ingredients }}</td>
+            </tr>
+            <tr>
+                <th>Preparationtime</th>
+                <td>{% if recipe.preparationTime %}{{ recipe.preparationTime|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Cookingtime</th>
+                <td>{% if recipe.cookingTime %}{{ recipe.cookingTime|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Difficulty</th>
+                <td>{{ recipe.difficulty }}</td>
+            </tr>
+            <tr>
+                <th>Fednumber</th>
+                <td>{{ recipe.fedNumber }}</td>
+            </tr>
+            <tr>
+                <th>Quantities</th>
+                <td>{{ recipe.quantities }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ recipe.type }}</td>
+            </tr>
+            <tr>
+                <th>Keywords</th>
+                <td>{{ recipe.keyWords }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('recipes_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('recipes_edit', { 'id': recipe.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
