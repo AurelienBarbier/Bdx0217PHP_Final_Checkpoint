@@ -1,0 +1,51 @@
+{% extends '@MarmiWild/layout.html.twig' %}
+
+{% block body %}
+      <a class="back" href="{{ path('recipe_index') }}"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+    </a>
+
+<div class="container">
+    <div id="recipe_header" class="row">
+        <img class="image_recipe col s12 m5 l5" src="{{ recipe.picture }}">
+        <div id="recipe_infos" class="col s12 m7 l7">
+            <h1>{{ recipe.name }}</h1> 
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <p><i class="fa fa-cutlery" aria-hidden="true"></i> {{ recipe.type }}</p>
+                </div>
+                <div class="col s12 m6 l6">
+                    <p> <i class="fa fa-male" aria-hidden="true"></i> {{ recipe.nbPerson }} personne(s)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <p><i class="fa fa-star-o" aria-hidden="true"></i> {{ recipe.difficulty }}/4</p>
+                </div>
+                <div class="col s12 m6 l6">
+                    <p><i class="fa fa-clock-o" aria-hidden="true"></i> {{ recipe.duration }} minutes</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="recipe_body" class="row">
+        <div id="recipe_instruc" class="col s12 offset-m1 m10 offset-l1 l10">
+            <p>{{ recipe.instruction | nl2br }}</p>
+        </div>{# 
+        <div id="recipe_ingredient" class="col s12 offset-m1 m10 offset-l1 l10">
+            <p></p>
+        </div> #}
+    </div>
+
+    <div class="row">
+        <div class="col s12 l6 modif">
+                <a class="waves-effect waves-light btn" href="{{ path('recipe_edit', { 'id': recipe.id }) }}">Modifier</a>
+        </div>
+        <div class="col s12 l6 del">
+                {{ form_start(delete_form) }}
+                    <input class="waves-effect waves-light btn" type="submit" value="Supprimer">
+                {{ form_end(delete_form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

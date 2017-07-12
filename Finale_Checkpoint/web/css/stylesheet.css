@@ -1,0 +1,109 @@
+body
+{
+	background-color: #EFEFEF;
+}
+
+#logo
+{
+	width: 190px;
+	height: auto;
+	padding: 5px;
+	margin-left: 10px;
+}
+
+#search
+{
+	width: 100%;
+}
+#search img
+{
+	width: 100%;
+}
+#create
+{
+	width: 100%; 
+	text-align: center;
+
+}
+#create a
+{
+	background-color: #DB5700;
+	padding: 0 20%;
+}
+
+nav 
+{
+	background-color: white;
+}
+
+nav ul a {
+	color: orange;
+}
+
+h2{
+	text-align: center;
+}
+#marmiwildbundle_recipe_valider
+{
+	background-color: #DB5700;
+	padding: 0 40%;
+
+}
+form {
+	margin: 0 30%;
+}
+
+.image_recipe
+{
+	border-radius: 100%;
+	float: left;
+}
+
+#recipe_body, #recipe_header
+{
+	text-align: center;
+}
+#recipe_header
+ {
+ 	border-bottom: 1px solid lightgrey;
+ }
+.container
+{
+	background-color: white;
+	border-radius: 5%;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	padding: 30px;
+}
+
+.page-footer
+{
+	background-color: grey; 
+}
+.footer-copyright
+{
+	background-color: darkgrey; 
+	text-align: center;
+}
+
+.back
+{
+	margin-top: 0px;
+	margin-left: 50px;
+	color: darkgrey;
+	float: left;
+}
+.modif
+ {
+ 	text-align: center;
+ }
+.modif .btn
+ {
+ 	text-align: center;
+	background-color: #DB5700;
+ }
+.del .btn
+ {
+ 	text-align: center;
+	background-color: #DB5700;
+ }

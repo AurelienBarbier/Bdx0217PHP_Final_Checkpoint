@@ -1,0 +1,45 @@
+{% extends '@MarmiWild/layout.html.twig' %}
+
+{% block body %}
+  <a class="back" href="{{ path('recipe_index') }}"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+</a>
+
+    <div class="container">
+    <h2>Créez votre recette</h2>
+
+    {{ form_start(form) }}
+        <div class="input-field col s12 l3">
+            {{ form_widget(form.name) }}
+            {{ form_label(form.name) }}
+            {{ form_errors(form.name) }}
+        </div>   
+         <div class="input-field col s12 l3">
+        {{ form_widget(form.nbPerson) }}
+        {{ form_label(form.nbPerson) }}
+        {{ form_errors(form.nbPerson) }}
+    </div>    
+    <div class="input-field col s12 l3">
+        {{ form_widget(form.duration) }}
+        {{ form_label(form.duration) }}
+        {{ form_errors(form.duration) }}
+    </div>    
+    <div class="input-field col s12 l3">
+        {{ form_widget(form.difficulty) }}
+        {{ form_label(form.difficulty) }}
+        {{ form_errors(form.difficulty) }}
+    </div>    
+    <div class="input-field col s12 l3">
+        {{ form_widget(form.type) }}
+        {{ form_errors(form.type) }}
+    </div>    
+    <div class="input-field col s12 l3" >
+        {{ form_widget(form.picture) }}
+        {{ form_label(form.picture) }}
+        {{ form_errors(form.picture) }}
+    </div>
+    <div class="input-field col s12 l4">
+        {{ form_row(form.valider, {'attr':{ 'class': 'btn waves-effect waves-light'}}) }}
+    </div>
+        {{ form_end(form) }}
+        </div>
+{% endblock %}

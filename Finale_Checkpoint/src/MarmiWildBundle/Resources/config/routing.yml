@@ -1,0 +1,11 @@
+marmi_wild_ingredient:
+       resource: "@MarmiWildBundle/Resources/config/routing/ingredient.yml"
+       prefix:   /ingredient
+
+marmi_wild_recipe:
+    resource: "@MarmiWildBundle/Resources/config/routing/recipe.yml"
+    prefix:   /recipe
+
+marmi_wild_homepage:
+    path:     /
+    defaults: { _controller: MarmiWildBundle:Default:index }

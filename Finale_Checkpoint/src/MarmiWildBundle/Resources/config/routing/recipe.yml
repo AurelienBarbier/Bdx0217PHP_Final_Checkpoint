@@ -1,0 +1,24 @@
+recipe_index:
+    path:     /
+    defaults: { _controller: "MarmiWildBundle:Recipe:index" }
+    methods:  GET
+
+recipe_show:
+    path:     /{id}/show
+    defaults: { _controller: "MarmiWildBundle:Recipe:show" }
+    methods:  GET
+
+recipe_new:
+    path:     /new
+    defaults: { _controller: "MarmiWildBundle:Recipe:new" }
+    methods:  [GET, POST]
+
+recipe_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MarmiWildBundle:Recipe:edit" }
+    methods:  [GET, POST]
+
+recipe_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MarmiWildBundle:Recipe:delete" }
+    methods:  DELETE

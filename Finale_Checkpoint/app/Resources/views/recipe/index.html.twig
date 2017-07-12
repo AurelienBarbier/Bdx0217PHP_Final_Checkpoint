@@ -1,0 +1,36 @@
+{% extends '@MarmiWild/layout.html.twig' %}
+
+{% block body %}
+
+    <div id="search"> <img src="{{ asset('img/banner.jpg') }}"></div>
+
+    <div id="create">  <a class="waves-effect waves-light btn" href="{{ path ('recipe_new') }}">Créer une recette</a></div>
+
+    <section class="main container">
+            <ul class="row ch-grid">
+        {% for recipe in recipes %}
+            <div class="col s12 l4 m4">
+                <li>
+                    <a href="{{ path('recipe_show', { 'id': recipe.id }) }}">
+                        <div class="ch-item">   
+                        <div class="ch-info">
+                            <h3>{{ recipe.name }}</h3>
+                            <p>{{ recipe.nbPerson }} personnes<span class="type">{{ recipe.type }}</span></p>
+                        </div>
+                        {% if recipe.picture == NULL %}
+                            <div class="ch-thumb" style="background-image: url({{ asset('img/default.png') }});background-position: center;background-size:cover; background-repeat:no-repeat;
+                             z-index: 12;"></div>
+                        {% endif %}
+                        {% if recipe.picture != NULL %}
+                            <div class="ch-thumb" style="background-image: url({{ recipe.picture }});background-position: center;background-size:cover; background-repeat:no-repeat;
+                             z-index: 12;"></div>
+                        {% endif %}
+                    </div>
+                    </a>
+
+                </li>
+                </div>
+                {% endfor %}
+            </ul>
+        </section>
+{% endblock %}
