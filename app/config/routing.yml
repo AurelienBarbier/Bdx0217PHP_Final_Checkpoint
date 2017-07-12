@@ -1,3 +1,6 @@
+app_recette:
+    resource: "@AppBundle/Resources/config/routing/recette.yml"
+    prefix:   /
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

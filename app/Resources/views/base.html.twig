@@ -1,13 +1,52 @@
-<!DOCTYPE html>
+
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+<meta charset="UTF-8"/>
+<head>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    {% endblock %}
+</head>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo" src="{{ asset('images/Logo.png') }}">MarmiWild</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="">Tips</a></li>
+            <li><a href="">Ethique</a></li>
+            <li> <a href="{{ path('recette_new') }}">Nouvelle Recette</a></li>
+        </ul>
+    </div>
+</nav>
+<body>
+{% block body %}
+{% endblock %}
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">MarmiWild</h5>
+                <p class="grey-text text-lighten-4">Des Plats sauvagement savoureux!</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">MW</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Bio</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">de Saison</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Local</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+        </div>
+    </div>
+</footer>
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+{% endblock %}
+</body>
+

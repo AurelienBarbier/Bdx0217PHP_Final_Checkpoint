@@ -1,0 +1,4 @@
+app_recette:
+    resource: "@AppBundle/Resources/config/routing/recette.yml"
+    prefix:   /recette
+
