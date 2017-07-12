@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="texte">
+                {% for type, flashes in app.session.flashbag.all %}
+                    {% for flash in flashes %}
+                        <div class="alert alert-{{ type }} fade in">
+                            {{ flash }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            {% for recette in liste %}
+                <div class="col-xs-18 col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/500x250/EEE">
+                        <div class="caption">
+                            <h2>{{ recette.titre }}</h2>
+                            <h4>{{ recette.type }}</h4>
+                            <p><span class="titre">Liste des ingrédients:</span> <br/>
+                                {{ recette.ingredients }}</p>
+                            <p><span class="titre">Préparation:</span> <br/>
+                                {{ recette.preparation }}</p>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script>
+
+        $('.alert').delay(800).fadeIn(800).delay(6000).fadeOut(800)
+
+    </script>
+
+
+{% endblock %}

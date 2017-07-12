@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+ {% for type, flashes in app.session.flashbag.all %}
+     {% for flash in flashes %}
+         <div class="alert alert-{{ type }} fade in">
+             {{ flash }}
+         </div>
+     {% endfor %}
+ {% endfor %}
+
+
+<div id="add">
+    <h2>Ajouter une recette</h2>
+
+    {{ form_start(form) }}
+
+    {{ form_widget(form.titre) }}
+
+    {{ form_widget(form.ingredients) }}
+
+    {{ form_widget(form.type) }}
+
+    {{ form_widget(form.preparation) }}
+
+    {{ form_row(form.brochure) }}
+
+    {{ form_widget(form.ajouter) }}
+
+    {{ form_end(form) }}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+marmi_wild_homepage:
+    path:     /
+    defaults: { _controller: MarmiWildBundle:Default:index }
+
+marmi_wild_recettes:
+    path:     /recettes
+    defaults: { _controller: MarmiWildBundle:Default:recettes }
+
+marmi_wild_desserts:
+    path:     /desserts
+    defaults: { _controller: MarmiWildBundle:Default:desserts }
+
+marmi_wild_plats:
+    path:     /plats
+    defaults: { _controller: MarmiWildBundle:Default:plats }
+
+marmi_wild_entrees:
+    path:     /entrees
+    defaults: { _controller: MarmiWildBundle:Default:entrees }
+
+marmi_wild_aperitifs:
+    path:     /aperitifs
+    defaults: { _controller: MarmiWildBundle:Default:aperitifs }
+
+marmi_wild_boissons:
+    path:     /boissons
+    defaults: { _controller: MarmiWildBundle:Default:boissons }
+
+marmi_wild_add_recettes:
+    path:     /addrecettes
+    defaults: { _controller: MarmiWildBundle:Default:addrecettes }
+
+marmi_wild_recherche:
+        path: /recherche
+        defaults: {  _controller: MarmiWildBundle:Default:recherche}

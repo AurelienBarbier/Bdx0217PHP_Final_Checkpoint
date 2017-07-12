@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <nav class="navbar navbar-default affix-top" role="navigation" id="BB-nav">
+        <div class="container nav-container">
+            <!--            <div class="navbar-header">-->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".BB-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <ul id="menu-menu" class="nav navbar-nav BB-nav collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class="accueil" href="{{ path('marmi_wild_recettes') }}">Les récents</a></li>
+                    <li><a class="accueil" href="{{ path('marmi_wild_aperitifs') }}">Apéritifs</a></li>
+                    <li><a class="accueil" href="{{ path('marmi_wild_entrees') }}">Entrées</a></li>
+                    <li><a class="accueil" href="{{ path('marmi_wild_plats') }}">Plats</a></li>
+                    <li><a class="accueil" href="{{ path('marmi_wild_desserts') }}">Desserts</a></li>
+                    <li><a class="accueil" href="{{ path('marmi_wild_boissons') }}">Boissons</a></li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="texte">
+                <p>Voici la liste des recettes, vous pouvez également en ajouter dans l'onglet "nouvelle recette":
+                </p>
+            </div>
+            {% for dessert in desserts %}
+                {% if dessert.type == "dessert"%}
+                    <div class="col-xs-18 col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/500x250/EEE">
+                            <div class="caption">
+                                <h2>{{ dessert.titre }}</h2>
+                                <h4>{{ dessert.type }}</h4>
+                                <p><span class="titre">Liste des ingrédients:</span> <br/>
+                                    {{ dessert.ingredients }}</p>
+                                <p><span class="titre">Préparation:</span> <br/>
+                                    {{ dessert.preparation }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+{% endblock %}

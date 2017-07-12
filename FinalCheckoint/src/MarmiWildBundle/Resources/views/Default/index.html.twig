@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for type, flashes in app.session.flashbag.all %}
+        {% for flash in flashes %}
+            <div class="alert alert-{{ type }} fade in">
+                {{ flash }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="logo">
+    <img src="{{ asset('images/marmiwild_logo.png') }}">
+<br/>
+    <h1>Trouver une recette, une idée</h1>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+        </div>
+
+        <div class="row img-thumbnails">
+            <div class="col-md-6">
+                <h2>Les apéritifs</h2>
+                <a href="{{ path('marmi_wild_aperitifs') }}">
+                    <img src="{{ asset('images/aperitifs.jpg') }}" class="img-thumbnail">
+                </a>
+            </div>
+            <div class="col-md-6">
+                <h2>Les entrées</h2>
+                <a href="{{ path('marmi_wild_entrees') }}">
+                    <img src="{{ asset('images/entrees.jpg') }}" class="img-thumbnail">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h2>Les plats</h2>
+                <a href="{{ path('marmi_wild_plats') }}">
+                    <img src="{{ asset('images/plats.jpg') }}" class="img-thumbnail">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h2>Les desserts</h2>
+                <a href="{{ path('marmi_wild_desserts') }}">
+                    <img src="{{ asset('images/desserts.jpg') }}" class="img-thumbnail">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h2>Les boissons</h2>
+                <a href="{{ path('marmi_wild_boissons') }}">
+                    <img src="{{ asset('images/boissons.jpg') }}" class="img-thumbnail">
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <br/>
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script>
+
+        $('.alert').delay(800).fadeIn(800).delay(6000).fadeOut(800)
+
+    </script>
+
+
+{% endblock %}

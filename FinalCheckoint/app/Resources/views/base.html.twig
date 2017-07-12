@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}MarmiWild{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="screen">
+    <link rel="icon" type="image/x-icon" href="{{ asset('marmiwild_logo.png') }}" />
+</head>
+<body>
+{% block navbar %}
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Clique sur l'icône de recherche</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbar-collapse-3">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ path('marmi_wild_homepage') }}">Accueil</a></li>
+                            <li><a href="{{ path('marmi_wild_recettes') }}">Recettes</a></li>
+                            <li><a href="{{ path('marmi_wild_add_recettes') }}">Nouvelle Recette</a></li>
+                            <li class="s-icon">
+                                <a href="#" id="addClass"><span class="glyphicon glyphicon-search"></span></a>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container -->
+            </nav><!-- /.navbar -->
+
+            <div id="qnimate" class="off">
+                <div id="search" class="open">
+                    <button data-widget="remove" id="removeClass" class="close" type="button">×</button>
+                    <form action="{{ path('marmi_wild_recherche') }}" method="get">
+                        <input type="text" placeholder="Tape ta recherche ici" value="" name="term" id="term">
+                        <button class="btn btn-lg btn-site" type="submit"><span class="glyphicon glyphicon-search"></span> Rechercher</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+{% block body %}{% endblock %}
+
+{% block footer %}
+<footer id="footer-Section">
+    <div class="footer-top-layout">
+        <div class="container">
+            <div class="row">
+                <div class="OurBlog">
+                    <h4>MarmiWild</h4>
+                    <p>Checkpoint 5 et le dernier !</p>
+                    <div class="post-blog-date">12 juillet 2017</div>
+                </div>
+                <div class=" col-lg-8 col-lg-offset-2">
+                    <div class="col-sm-4">
+                        <div class="footer-col-item">
+                            <h4>Adresse</h4>
+                            <address>
+                                15 Place Canteloup, <br>
+                                33800 Bordeaux, FRANCE
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="footer-col-item">
+                            <h4>Contact</h4>
+                            <div class="item-contact"> <a href="tel:630-885-9200"><span class="link-id">P</span>:<span>630-885-9200</span></a> <a href="tel:630-839.2006"><span class="link-id">F</span>:<span>630-839.2006</span></a> <a href="mailto:info@brandcatmedia.com"><span class="link-id">E</span>:<span>info@brandcatmedia.com</span></a> </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="footer-col-item">
+                            <h4>Newsletter</h4>
+                            <form class="signUpNewsletter" action="" method="get">
+                                <input name="" class="gt-email form-control" placeholder="You@youremail.com" type="text">
+                                <input name="" class="btn-go" value="Go" type="button">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-layout">
+        <div class="copyright-tag">Made with love by Wild Code School</div>
+    </div>
+</footer>
+
+{% endblock %}
+{% block javascripts %}
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <script>
+
+        $(function(){
+            $("#addClass").click(function () {
+                $('#qnimate').addClass('popup-box-on');
+            });
+
+            $("#removeClass").click(function () {
+                $('#qnimate').removeClass('popup-box-on');
+            });
+        })
+
+    </script>
+{% endblock %}
+</body>
+</html>
