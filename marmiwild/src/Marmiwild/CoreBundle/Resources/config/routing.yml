@@ -25,3 +25,7 @@ recette_delete:
 recette_filtre:
     path:     /recette/filtre/{critere}
     defaults: { _controller: MarmiwildCoreBundle:Recette:filterRecettes }
+
+recette_search:
+    path:     /recette/search/{keyword}
+    defaults: { _controller: MarmiwildCoreBundle:Recette:searchRecettes }

@@ -152,4 +152,26 @@ class RecetteController extends Controller
         throw new HttpException('501', 'Invalid Call');
     }
 
+    public function searchRecettesAction(Request $request, $keyword) {
+
+        if ($request->isXmlHttpRequest()) {
+            $em = $this->getDoctrine()->getManager();
+            $recettes = $em->getRepository(Recette::class)->findWithKeyword($keyword);
+
+            $encoder = new JsonEncoder();
+            $normalizer = new ObjectNormalizer();
+
+            $serializer = new Serializer(array($normalizer), array($encoder));
+            $normalizer->setCircularReferenceHandler(function ($object) {
+                return $object->getId();
+            });
+            $jsonDocuments = $serializer->serialize($recettes, 'json');
+
+            return new JsonResponse(array(
+                'data'=> $jsonDocuments
+            ));
+        }
+        throw new HttpException('501', 'Invalid Call');
+    }
+
 }

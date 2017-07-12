@@ -34,4 +34,13 @@ class RecetteRepository extends \Doctrine\ORM\EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findWithKeyword($keyword) {
+        $qb = $this->createQueryBuilder('r')
+            ->where('r.nom LIKE :keyword')
+            ->setParameter('keyword', '%'.$keyword.'%')
+            ;
+
+        return $qb->getQuery()->getResult();
+    }
 }
