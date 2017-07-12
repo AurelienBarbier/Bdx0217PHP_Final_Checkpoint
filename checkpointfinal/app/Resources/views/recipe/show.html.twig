@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col s2 offset-s4">
+            <h1>Recettes</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s8 offset-s2">
+
+            <table>
+                <tbody>
+                <tr>
+                    <th>N°</th>
+                    <td>{{ recipe.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ recipe.name }}</td>
+                </tr>
+                <tr>
+                    <th>Temps en min</th>
+                    <td>{{ recipe.time }}</td>
+                </tr>
+                <tr>
+                    <th>Niveau</th>
+                    <td>{{ recipe.level }}</td>
+                </tr>
+                <tr>
+                    <th>Personnes</th>
+                    <td>{{ recipe.nbPerson }}</td>
+                </tr>
+                <tr>
+                    <th>Ingredients</th>
+                    <td>{{ recipe.ingredients }}</td>
+                </tr>
+                <tr>
+                    <th>Preparation</th>
+                    <td>{{ recipe.prepare }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    <a href="{{ path('recipe_index') }}">Retour à la liste des recettes</a>
+                </li>
+                <li>
+                    <a href="{{ path('recipe_edit', { 'id': recipe.id }) }}">Editer</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                    <input type="submit" value="Supprimer">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+
+        </div>
+    </div>
+{% endblock %}

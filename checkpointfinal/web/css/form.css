@@ -1,0 +1,35 @@
+.row {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.container-fluid.header {
+    background-color: rgba(255, 199, 12, 0.9);
+    height: 80px;
+}
+
+img {
+    width: 22%;
+    height: auto;
+    margin-left: 38%;
+    padding: 15px;
+}
+
+h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    margin-left: 40%;
+}
+
+h3 {
+    font-weight: 600;
+    margin-left: 9%;
+}
+
+h4 {
+    margin-top: 25px;
+    margin-left: 37%;
+    color: #F9F9F9;
+    font-weight: bold;
+}
+
