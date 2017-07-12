@@ -1,0 +1,4 @@
+recipes:
+    resource: "@RecipesBundle/Resources/config/routing.yml"
+    prefix:   /
+
