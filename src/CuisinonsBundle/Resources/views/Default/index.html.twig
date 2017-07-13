@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="row">
-        {% for recette in app.user.recettes %}
+        {% for recette in recettes %}
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     {% if recette.image %}

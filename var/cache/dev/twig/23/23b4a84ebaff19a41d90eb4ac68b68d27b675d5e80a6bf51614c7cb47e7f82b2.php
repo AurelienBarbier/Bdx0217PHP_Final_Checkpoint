@@ -21,36 +21,36 @@ class __TwigTemplate_bc28a0cc693ec37e6840405f9208da61b0febfdb931fe92befbe39ee91c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_12a2d50b51d7b35c8bf7ff6c20a6e80249d08fa0b9e4503a50aeba1122ceccbc = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_12a2d50b51d7b35c8bf7ff6c20a6e80249d08fa0b9e4503a50aeba1122ceccbc->enter($__internal_12a2d50b51d7b35c8bf7ff6c20a6e80249d08fa0b9e4503a50aeba1122ceccbc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CuisinonsBundle:Default:index.html.twig"));
+        $__internal_87f4fe73b57b8627276484c36f3e0fecf6befe760f70c6becc8d359b823b6e24 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_87f4fe73b57b8627276484c36f3e0fecf6befe760f70c6becc8d359b823b6e24->enter($__internal_87f4fe73b57b8627276484c36f3e0fecf6befe760f70c6becc8d359b823b6e24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CuisinonsBundle:Default:index.html.twig"));
 
-        $__internal_5d93d0f5c91c7e991066ecd74d56f6a4148de6a1c7ab681e617f03c477bc5ddf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5d93d0f5c91c7e991066ecd74d56f6a4148de6a1c7ab681e617f03c477bc5ddf->enter($__internal_5d93d0f5c91c7e991066ecd74d56f6a4148de6a1c7ab681e617f03c477bc5ddf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CuisinonsBundle:Default:index.html.twig"));
+        $__internal_16f52503930f938e46ec2b4173a6badfc2b8d8e81b469feaa3f5cdd8b55194ef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_16f52503930f938e46ec2b4173a6badfc2b8d8e81b469feaa3f5cdd8b55194ef->enter($__internal_16f52503930f938e46ec2b4173a6badfc2b8d8e81b469feaa3f5cdd8b55194ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CuisinonsBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_12a2d50b51d7b35c8bf7ff6c20a6e80249d08fa0b9e4503a50aeba1122ceccbc->leave($__internal_12a2d50b51d7b35c8bf7ff6c20a6e80249d08fa0b9e4503a50aeba1122ceccbc_prof);
+        $__internal_87f4fe73b57b8627276484c36f3e0fecf6befe760f70c6becc8d359b823b6e24->leave($__internal_87f4fe73b57b8627276484c36f3e0fecf6befe760f70c6becc8d359b823b6e24_prof);
 
         
-        $__internal_5d93d0f5c91c7e991066ecd74d56f6a4148de6a1c7ab681e617f03c477bc5ddf->leave($__internal_5d93d0f5c91c7e991066ecd74d56f6a4148de6a1c7ab681e617f03c477bc5ddf_prof);
+        $__internal_16f52503930f938e46ec2b4173a6badfc2b8d8e81b469feaa3f5cdd8b55194ef->leave($__internal_16f52503930f938e46ec2b4173a6badfc2b8d8e81b469feaa3f5cdd8b55194ef_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_87c75478c2defb80464e909e84ad2943739fe066e1238390df08e8bf99181fee = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_87c75478c2defb80464e909e84ad2943739fe066e1238390df08e8bf99181fee->enter($__internal_87c75478c2defb80464e909e84ad2943739fe066e1238390df08e8bf99181fee_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c9fcb89a97094d948cb301716ca5444a4839553b31dbb30bb7cb5f9ee2c5ad2f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c9fcb89a97094d948cb301716ca5444a4839553b31dbb30bb7cb5f9ee2c5ad2f->enter($__internal_c9fcb89a97094d948cb301716ca5444a4839553b31dbb30bb7cb5f9ee2c5ad2f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_8e82e86d1e81460dcd88145019696ad661eb8b4e5aa72b4a6022b995b3f38e20 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8e82e86d1e81460dcd88145019696ad661eb8b4e5aa72b4a6022b995b3f38e20->enter($__internal_8e82e86d1e81460dcd88145019696ad661eb8b4e5aa72b4a6022b995b3f38e20_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2cb7f14545bfb63046febc751ae010024bef2d450eeb14c6a61bb7bf69740558 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2cb7f14545bfb63046febc751ae010024bef2d450eeb14c6a61bb7bf69740558->enter($__internal_2cb7f14545bfb63046febc751ae010024bef2d450eeb14c6a61bb7bf69740558_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <div class=\"row\">
         ";
         // line 5
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "recettes", array()));
+        $context['_seq'] = twig_ensure_traversable(($context["recettes"] ?? $this->getContext($context, "recettes")));
         foreach ($context['_seq'] as $context["_key"] => $context["recette"]) {
             // line 6
             echo "            <div class=\"col-sm-6 col-md-4\">
@@ -118,10 +118,10 @@ class __TwigTemplate_bc28a0cc693ec37e6840405f9208da61b0febfdb931fe92befbe39ee91c
     </div>
 ";
         
-        $__internal_8e82e86d1e81460dcd88145019696ad661eb8b4e5aa72b4a6022b995b3f38e20->leave($__internal_8e82e86d1e81460dcd88145019696ad661eb8b4e5aa72b4a6022b995b3f38e20_prof);
+        $__internal_2cb7f14545bfb63046febc751ae010024bef2d450eeb14c6a61bb7bf69740558->leave($__internal_2cb7f14545bfb63046febc751ae010024bef2d450eeb14c6a61bb7bf69740558_prof);
 
         
-        $__internal_87c75478c2defb80464e909e84ad2943739fe066e1238390df08e8bf99181fee->leave($__internal_87c75478c2defb80464e909e84ad2943739fe066e1238390df08e8bf99181fee_prof);
+        $__internal_c9fcb89a97094d948cb301716ca5444a4839553b31dbb30bb7cb5f9ee2c5ad2f->leave($__internal_c9fcb89a97094d948cb301716ca5444a4839553b31dbb30bb7cb5f9ee2c5ad2f_prof);
 
     }
 
@@ -154,7 +154,7 @@ class __TwigTemplate_bc28a0cc693ec37e6840405f9208da61b0febfdb931fe92befbe39ee91c
 
 {% block body %}
     <div class=\"row\">
-        {% for recette in app.user.recettes %}
+        {% for recette in recettes %}
             <div class=\"col-sm-6 col-md-4\">
                 <div class=\"thumbnail\">
                     {% if recette.image %}
