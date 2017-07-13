@@ -2,50 +2,75 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <!-- Latest compiled and minified CSS -->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <title>{% block title %}Marmiwild{% endblock %}</title>
 
-            <!-- Optional theme -->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        {% block stylesheets %}  {% endblock %}
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
             <link href="https://fonts.googleapis.com/css?family=Comfortaa|Lobster+Two|Poiret+One" rel="stylesheet">
             <link rel="stylesheet" href="{{ asset('assets/css/stylesheet.css') }}">
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
     <!-- Top menu -->
-    <nav class="navbar navbar-default " role="navigation">
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header menu">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ path('recette_index') }}"><img class="img-responsive" width="15%" alt="logo" src="{{ asset('assets/img/Logo.png') }}"></a>
+                <a class="navbar-brand" href="{{ path('recette_index') }}"><img class="img-responsive" alt="logo" src="{{ asset('assets/img/Logo.png') }}"></a>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="top-navbar-1">
-                <ul class="nav navbar-nav navbar-right menu">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recette <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Entrées</a></li>
-                            <li><a href="#">Plats</a></li>
-                            <li><a href="#">Desserts</a></li>
-                        </ul>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-right" action="{{ path('recette_search') }}" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Rechercher</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
                     <li><a class="scroll-link" href="{{ path('recette_new') }}">Ajouter une recette</a></li>
-                    <li><a class="scroll-link" href="#testimonials">Toutes les recettes</a></li>
+                    {#<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>#}
+                    <li><a href="{{ path('recette_index') }}">Toutes les recettes</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recettes <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('recette_filter', {'type':'entree' }) }}">Entrées</a></li>
+                            <li><a href="{{ path('recette_filter', {'type':'plat' }) }}">Plats</a></li>
+                            <li><a href="{{ path('recette_filter', {'type':'dessert' }) }}">Desserts</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </div>
-        </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
     </nav>
 
+    {% for message in app.session.flashbag.get('info') %}
+        <div class="flash-box">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    ×</button>
+                <span class="glyphicon glyphicon-ok"></span> <strong>Notification</strong>
+                <hr class="message-inner-separator">
+                <p>{{ message }}</p>
+            </div>
+        </div>
+    {% endfor %}
 
         {% block body %}{% endblock %}
 
@@ -102,13 +127,12 @@
         </div>
     </section>
 
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/show_card_profile.js') }}"></script>
 
-        {% block javascripts %}
-            <script src="{{ asset('assets/js/jquery.js') }}"></script>
-            <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-            <script src="{{ asset('assets/js/show_card_profile.js') }}"></script>
-            <!-- Latest compiled and minified JavaScript -->
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    {% block javascripts %}
 
         {% endblock %}
     </body>

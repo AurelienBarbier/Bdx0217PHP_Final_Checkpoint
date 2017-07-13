@@ -57,11 +57,10 @@ class RecetteController extends Controller
      */
     public function showAction(Recette $recette)
     {
-        $deleteForm = $this->createDeleteForm($recette);
 
         return $this->render('WCSMarmiwildBundle:recette:show.html.twig', array(
             'recette' => $recette,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 
@@ -71,7 +70,6 @@ class RecetteController extends Controller
      */
     public function editAction(Request $request, Recette $recette)
     {
-        $deleteForm = $this->createDeleteForm($recette);
         $editForm = $this->createForm('WCS\MarmiwildBundle\Form\RecetteType', $recette);
         $editForm->handleRequest($request);
 
@@ -84,7 +82,6 @@ class RecetteController extends Controller
         return $this->render('WCSMarmiwildBundle:recette:edit.html.twig', array(
             'recette' => $recette,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -94,31 +91,37 @@ class RecetteController extends Controller
      */
     public function deleteAction(Request $request, Recette $recette)
     {
-        $form = $this->createDeleteForm($recette);
-        $form->handleRequest($request);
+        if($recette !== null) {
 
-        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($recette);
             $em->flush();
+            $request->getSession()->getFlashBag()->add('info', 'La recette a bien été supprimée.');
         }
 
         return $this->redirectToRoute('recette_index');
     }
 
-    /**
-     * Creates a form to delete a recette entity.
-     *
-     * @param Recette $recette The recette entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Recette $recette)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('recette_delete', array('id' => $recette->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
+    public function searchAction(Request $request) {
+
+        $em = $this->getDoctrine()->getManager();
+        $keyword = $request->get('keyword');
+
+        $recettes = $em->getRepository(Recette::class)->findRecetteByNom($keyword);
+
+        return $this->render('WCSMarmiwildBundle:recette:index.html.twig', array(
+            'recettes'=>$recettes,
+        ));
+    }
+
+
+    public function recetteTypeAction(Request $request, $type){
+
+        $em = $this->getDoctrine()->getManager();
+        $recettes = $em->getRepository(Recette::class)->findRecetteByType($type);
+
+        return $this->render('WCSMarmiwildBundle:recette:index.html.twig', array(
+            'recettes'=>$recettes,
+        ));
     }
 }

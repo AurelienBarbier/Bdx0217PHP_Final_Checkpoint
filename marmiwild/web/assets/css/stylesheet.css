@@ -18,6 +18,10 @@ body{
     background-color: whitesmoke;
 
 }
+.navbar-brand>img{
+    margin-top: 25px;
+    width: 18%;
+}
 /************************************************\
 ==================================================
 Recettes

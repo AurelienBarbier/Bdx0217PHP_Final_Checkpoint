@@ -10,4 +10,19 @@ namespace WCS\MarmiwildBundle\Repository;
  */
 class RecetteRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findRecetteByNom($keyword)
+    {
+        $qb = $this->createQueryBuilder('r')
+            ->where('r.nom like :keyword')
+            ->setParameter('keyword', '%' . $keyword . '%');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function findRecetteByType($type)
+    {
+        $qb = $this->createQueryBuilder('r')
+            ->where('r.type = :type')
+            ->setParameter('type', $type);
+        return $qb->getQuery()->getResult();
+    }
 }
