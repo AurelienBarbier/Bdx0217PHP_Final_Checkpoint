@@ -42,7 +42,7 @@ class RecetteController extends Controller
             $em->persist($recette);
             $em->flush();
 
-            return $this->redirectToRoute('recette_show', array('id' => $recette->getId()));
+            return $this->redirectToRoute('recette_index');
         }
 
         return $this->render('WCSMarmiwildBundle:recette:new.html.twig', array(
@@ -123,5 +123,18 @@ class RecetteController extends Controller
         return $this->render('WCSMarmiwildBundle:recette:index.html.twig', array(
             'recettes'=>$recettes,
         ));
+    }
+
+
+    public function recetteNbrepersonneAction(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+        $nbrepersonne = $request->get('nbrepersonne');
+        $recettes = $em->getRepository(Recette::class)->findRecetteByNbrePerson($nbrepersonne);
+
+        return $this->render('WCSMarmiwildBundle:recette:index.html.twig', array(
+           'recettes'=>$recettes,
+        ));
+
     }
 }

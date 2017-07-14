@@ -25,4 +25,14 @@ class RecetteRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('type', $type);
         return $qb->getQuery()->getResult();
     }
+
+
+    public function findRecetteByNbrePerson($nbrepersonne){
+
+        $qb = $this->createQueryBuilder('r')
+            ->where('r.personne = :nbrepersonne')
+            ->setParameter('nbrepersonne', $nbrepersonne);
+        return $qb->getQuery()->getResult();
+
+    }
 }

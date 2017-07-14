@@ -6,7 +6,7 @@
 
     <div class="row" style="margin-bottom: 10px">
         <div class="col-sm-offset-1 col-sm-10">
-                <h1>Ecrire une recette</h1>
+                <h1>Ajouter votre recette</h1>
             <div class="col-sm-12">
                 {{ form_start(form, {'action': path('recette_new')}) }}
 
@@ -72,20 +72,16 @@
                     </div>
                 </div>
             </div>
-
+                <br>
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-2">
+                            {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-primary'}}) }}
+                    </div>
+                </div>
             </div>
     </div>
     </div>
 
-
-
-    {{ form_widget(form) }}
-        <input type="submit" value="Create" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('recette_index') }}">Back to the list</a>
-        </li>
-    </ul>
 {% endblock %}

@@ -32,3 +32,8 @@ recette_filter:
     path:     /filter/{type}
     defaults: { _controller: "WCSMarmiwildBundle:Recette:recetteType" }
     methods:  GET
+
+recette_personne:
+    path:     /nbrepersonne
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:recetteNbrepersonne" }
+    methods:  POST

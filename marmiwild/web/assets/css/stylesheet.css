@@ -3,7 +3,9 @@ body{
     font-family: 'Lobster Two', cursive;
     font-family: 'Poiret One', cursive;
 }
-
+a{
+    color:white;
+}
 .menu{
     margin-top:-30px;
 }
@@ -15,7 +17,7 @@ body{
 }
 
 .footer{
-    background-color: whitesmoke;
+    background-color: lightgrey;
 
 }
 .navbar-brand>img{
@@ -232,4 +234,6 @@ Recettes
     margin:30px 90px;
 
 }
-
+span{
+    font-size: 13px;
+}

@@ -28,7 +28,7 @@
                                 <p class="email">{% if recette.temps %}{{ recette.temps|date('H:i') }} minutes{% endif %}</p>
 
                                     <h4 class="text-center">Ingrédients</h4>
-                                    <span class="text-center" >- {{ recette.ingredient }} -</span>
+                                    <span class="text-center" >{{ recette.ingredient }}</span>
                             </div>
                                     {#<td><a href="{{ path('recette_show', { 'id': recette.id }) }}">{{ recette.id }}</a></td>#}
                             <div class="footer">
@@ -42,50 +42,30 @@
                                 <div class="header">
                                     <h5 class="motto">{{ recette.nom }}</h5>
                                 </div>
-                                <div class="main">
-                                    <h4 class="text-center">Préparation</h4>
-
-                                        <span class="text-center" >{{ recette.preparation }} -</span>
-
+                                    <div class="main">
+                                        <h4 class="text-center">Préparation</h4>
+                                        <span class="text-center" >{{ recette.preparation }} </span>
                                     </div>
-                                <button class="btn">
-                                <a href="{{ path('recette_edit', { 'id': recette.id }) }}">Modifier</a>
-                                </button>
-                                <button class="btn">
-                                <a href="{{ path('recette_show', { 'id': recette.id }) }}">Liste</a>
-                                </button>
-                                <button class="btn">
-                                    <a href="{{ path('recette_delete', { 'id': recette.id }) }}">Effacer</a>
-                                </button>
+                                <div class="button" style="margin-top:110px;">
+                                    <button class="btn btn-success">
+                                        <a href="{{ path('recette_edit', { 'id': recette.id }) }}">Modifier</a>
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        <a href="{{ path('recette_show', { 'id': recette.id }) }}">Recette</a>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <a href="{{ path('recette_delete', { 'id': recette.id }) }}">Effacer</a>
+                                    </button>
+                                </div>
                             </div>
-                            </div>
-                        </div> <!-- end back panel -->
-                </div> <!-- end card -->
-            </div>
+                    </div>
+                </div> <!-- end back panel -->
+            </div> <!-- end card -->
+        </div>
 
         {% endfor %}
     </div>
 
 </div>
-
-{#
-                    <ul>
-                        <li>
-                            <a href="{{ path('recette_show', { 'id': recette.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('recette_edit', { 'id': recette.id }) }}">edit</a>
-                        </li>
-                    </ul>#}
-
-
-
-
-
-   {# <ul>
-        <li>
-            <a href="{{ path('recette_new') }}">Create a new recette</a>
-        </li>
-    </ul>#}
 
 {% endblock %}
