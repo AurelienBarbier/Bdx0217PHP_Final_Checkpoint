@@ -129,8 +129,8 @@ class RecetteController extends Controller
     public function recetteNbrepersonneAction(Request $request){
 
         $em = $this->getDoctrine()->getManager();
-        $nbrepersonne = $request->get('nbrepersonne');
-        $recettes = $em->getRepository(Recette::class)->findRecetteByNbrePerson($nbrepersonne);
+        $personnes = $request->get('personnes');
+        $recettes = $em->getRepository(Recette::class)->findRecetteByNbrePerson($personnes);
 
         return $this->render('WCSMarmiwildBundle:recette:index.html.twig', array(
            'recettes'=>$recettes,
