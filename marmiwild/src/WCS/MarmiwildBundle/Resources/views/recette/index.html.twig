@@ -25,7 +25,7 @@
                             <div class="main">
                                 <h3 class="name">{{ recette.nom }}</h3>
                                 <p class="email">Pour {{ recette.personne }} Personnes</p>
-                                <p class="email">{% if recette.temps %}{{ recette.temps|date('H:i') }} minutes{% endif %}</p>
+                                <p class="email">{% if recette.temps %}{{ recette.temps }} minutes{% endif %}</p>
 
                                     <h4 class="text-center">Ingrédients</h4>
                                     <span class="text-center" >{{ recette.ingredient }}</span>

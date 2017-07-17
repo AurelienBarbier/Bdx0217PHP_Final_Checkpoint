@@ -79,9 +79,9 @@ class Recette
     private $personne;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="temps", type="time")
+     * @ORM\Column(name="temps", type="string", length=255, nullable=true)
      */
     private $temps;
 
